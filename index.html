@@ -75,7 +75,7 @@
 
         <div class="trust">
           <span class="pill">Licensed & Insured</span>
-          <span class="pill">Same-Day Options</span>
+          <span the="pill">Same-Day Options</span>
           <span class="pill">Upfront Pricing</span>
           <span class="pill">EV Charger Specialist</span>
         </div>
@@ -330,7 +330,8 @@
 
   <script>
     // CONFIG
-    const WEBHOOK_URL = "https://wards-electrical.app.n8n.cloud/webhook-test/0c41a587-89af-4066-9aa8-365de46e1906";
+    // Use the production webhook URL for n8n (remove '-test' for production)
+    const WEBHOOK_URL = "https://wards-electrical.app.n8n.cloud/webhook/0c41a587-89af-4066-9aa8-365de46e1906";
 
     // Year
     document.getElementById("year").textContent = new Date().getFullYear();
