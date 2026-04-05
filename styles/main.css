@@ -1,19 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap');
+
 :root{
-  --brand:    #111111;   /* Near-black charcoal (header/dark surfaces) */
-  --accent:   #C0392B;   /* Crimson Red (primary accent) */
-  --gold:     #D4AF37;   /* Warm Gold (secondary accent: stars, checks, highlights) */
-  --electric: #E74C3C;   /* Bright red for hover states */
-  --bg:       #1a1a1a;   /* Charcoal grey base */
-  --card:     #242424;   /* Card background */
+  --brand:    #0a0a0a;   /* Midnight black */
+  --accent:   #C9A227;   /* Gold (primary accent) */
+  --gold:     #C9A227;   /* Gold */
+  --electric: #E2B832;   /* Bright gold hover */
+  --bg:       #111111;   /* Midnight black base */
+  --card:     #1a1a1a;   /* Card background */
   --text:     #FFFFFF;
-  --muted:    #A8B2BC;   /* Light grey secondary text */
-  --soft:     rgba(192,57,43,.08);
-  --border:   rgba(192,57,43,.22);
-  --shadow:   0 10px 30px rgba(0,0,0,.35);
+  --muted:    #888888;   /* Dark grey secondary text */
+  --soft:     rgba(201,162,39,.08);
+  --border:   rgba(201,162,39,.22);
+  --shadow:   0 10px 30px rgba(0,0,0,.45);
   /* Card system */
-  --card-bg:      rgba(36,36,36,0.90);
-  --card-border:  rgba(192,57,43,0.22);
-  --card-shadow:  0 10px 30px rgba(0,0,0,0.35);
+  --card-bg:      rgba(26,26,26,0.95);
+  --card-border:  rgba(201,162,39,0.22);
+  --card-shadow:  0 10px 30px rgba(0,0,0,0.45);
   --card-radius:  16px;
 }
 
@@ -23,7 +25,7 @@ body{
   margin:0;
   font-family: system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   color:var(--text);
-  background: linear-gradient(180deg,#252525 0%,var(--bg) 100%);
+  background: linear-gradient(180deg,#181818 0%,var(--bg) 100%);
   line-height:1.45;
 }
 
@@ -50,9 +52,9 @@ a:hover{color:var(--electric)}
   top: 0;
   left: 0; right: 0;
   z-index: 2000;
-  background: rgba(17,17,17,.95);
+  background: rgba(10,10,10,.97);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(192,57,43,.20);
+  border-bottom: 1px solid rgba(201,162,39,.20);
   color: var(--text);
 }
 .action-bar__inner{
