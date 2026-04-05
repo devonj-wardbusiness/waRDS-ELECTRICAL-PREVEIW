@@ -1,467 +1,1492 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Colorado Springs Electrician | Wards Electric LLC</title>
-  <meta name="description" content="Wards Electric LLC — residential and light commercial electrician in Colorado Springs. Flat-rate quotes, same-day availability, licensed & insured. Call 915-487-0660." />
-  <link rel="canonical" href="https://wardselectricllc.com/" />
-  <link rel="icon" href="assets/logo.jpg" />
-  <link rel="stylesheet" href="styles/main.css" />
-  <meta property="og:title" content="Colorado Springs Electrician | Wards Electric LLC" />
-  <meta property="og:description" content="Residential and light commercial electrical in Colorado Springs. Flat-rate quotes, same-day availability, licensed & insured." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://wardselectricllc.com/" />
-  <meta property="og:image" content="https://wardselectricllc.com/assets/logo.jpg" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Wards Electric LLC",
-    "description": "Residential and light commercial electrician serving Colorado Springs, Falcon/Peyton, Woodland Park, and Pueblo.",
-    "telephone": "915-487-0660",
-    "email": "Devonj.wardbusiness@gmail.com",
-    "url": "https://wardselectricllc.com",
-    "logo": "https://wardselectricllc.com/assets/logo.jpg",
-    "image": "https://wardselectricllc.com/assets/logo.jpg",
-    "address": { "@type": "PostalAddress", "addressLocality": "Colorado Springs", "addressRegion": "CO", "addressCountry": "US" },
-    "areaServed": ["Colorado Springs, CO", "Falcon, CO", "Peyton, CO", "Woodland Park, CO", "Pueblo, CO"],
-    "openingHours": "Mo-Sa 07:00-19:00"
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wards Electric LLC | Colorado Springs Electrician</title>
+<meta name="description" content="Licensed electrician in Colorado Springs, CO. Panel upgrades, EV charger installation, dedicated circuits, lighting &amp; more. Flat-rate quotes. Call 915-487-0660." />
+<link rel="canonical" href="https://wardselectricllc.com/" />
+<link rel="icon" href="assets/logo.jpg" />
+<meta property="og:title" content="Wards Electric LLC | Colorado Springs Electrician" />
+<meta property="og:description" content="Crafted work. Elevated results. Licensed &amp; insured electrical contractor in Colorado Springs. Flat-rate quotes, same-day availability." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://wardselectricllc.com/" />
+<meta property="og:image" content="https://wardselectricllc.com/assets/logo.jpg" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Wards Electric LLC",
+  "description": "Licensed electrician in Colorado Springs. Panel upgrades, EV charger installs, dedicated circuits, lighting, safety code fixes, and generator backup.",
+  "telephone": "915-487-0660",
+  "email": "Devonj.wardbusiness@gmail.com",
+  "url": "https://wardselectricllc.com",
+  "logo": "https://wardselectricllc.com/assets/logo.jpg",
+  "address": { "@type": "PostalAddress", "addressLocality": "Colorado Springs", "addressRegion": "CO", "addressCountry": "US" },
+  "areaServed": ["Colorado Springs, CO", "Falcon, CO", "Peyton, CO", "Woodland Park, CO", "Pueblo, CO"],
+  "openingHours": "Mo-Sa 07:00-19:00"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #111111;
+    --bg-alt:      #171717;
+    --bg-card:     #1A1A1A;
+    --bg-raised:   #222222;
+    --gold:        #C9A227;
+    --gold-deep:   #8B6914;
+    --gold-pale:   rgba(201,162,39,0.12);
+    --gold-border: rgba(201,162,39,0.25);
+    --text:        #FFFFFF;
+    --text-mid:    #999999;
+    --text-lt:     #666666;
+    --border:      rgba(255,255,255,0.08);
+    --border-md:   rgba(255,255,255,0.12);
+    --serif:       'Cormorant Garamond', Georgia, serif;
+    --sans:        'DM Sans', system-ui, sans-serif;
+    --radius:      6px;
+    --transition:  0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  </script>
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  a { color: var(--gold); text-decoration: none; }
+  a:hover { color: #fff; }
+
+  /* ── ANIMATIONS ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  .fade-up.delay-1 { transition-delay: 0.1s; }
+  .fade-up.delay-2 { transition-delay: 0.2s; }
+  .fade-up.delay-3 { transition-delay: 0.3s; }
+  .fade-up.delay-4 { transition-delay: 0.4s; }
+  .fade-up.delay-5 { transition-delay: 0.5s; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(17,17,17,0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+  nav.scrolled {
+    border-color: var(--gold-border);
+    box-shadow: 0 1px 40px rgba(0,0,0,0.6);
+  }
+  .nav-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-logo img { height: 34px; width: auto; border-radius: 5px; object-fit: contain; }
+  .nav-logo .w1 { color: #FFFFFF; }
+  .nav-logo .w2 { color: var(--gold); }
+  .nav-logo .w3 { color: var(--gold-deep); }
+  .nav-links {
+    display: flex;
+    gap: 2.25rem;
+    list-style: none;
+    align-items: center;
+  }
+  .nav-links a {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--text-lt);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color var(--transition);
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold) !important;
+    color: #111111 !important;
+    padding: 10px 22px !important;
+    border-radius: var(--radius) !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    transition: background var(--transition), transform var(--transition) !important;
+  }
+  .nav-cta:hover { background: #fff !important; color: #111 !important; transform: translateY(-1px); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--text-mid); border-radius: 2px; transition: var(--transition); }
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 70px; left: 0; right: 0; bottom: 0;
+    background: var(--bg);
+    z-index: 99;
+    padding: 2.5rem 2rem;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-top: 1px solid var(--gold-border);
+    overflow-y: auto;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+    transition: color var(--transition);
+  }
+  .mobile-menu a:hover { color: var(--gold); }
+  .mobile-cta {
+    background: var(--gold) !important;
+    color: #111 !important;
+    padding: 1rem !important;
+    border-radius: var(--radius) !important;
+    text-align: center;
+    font-family: var(--sans) !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border: none !important;
+    margin-top: auto;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 130px 2rem 90px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(201,162,39,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,162,39,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  .hero-glow {
+    position: absolute;
+    top: -10%; right: -10%;
+    width: 60vw; height: 60vw;
+    background: radial-gradient(circle, rgba(201,162,39,0.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-glow-2 {
+    position: absolute;
+    bottom: -20%; left: -10%;
+    width: 40vw; height: 40vw;
+    background: radial-gradient(circle, rgba(201,162,39,0.04) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 36px; height: 1px;
+    background: var(--gold);
+    opacity: 0.6;
+  }
+  .hero-headline {
+    font-family: var(--serif);
+    font-size: clamp(46px, 5.5vw, 72px);
+    line-height: 1.02;
+    margin-bottom: 1.75rem;
+    letter-spacing: -0.5px;
+  }
+  .hero-headline em {
+    font-style: italic;
+    font-weight: 300;
+    color: #999;
+    display: block;
+  }
+  .hero-headline strong {
+    font-weight: 700;
+    display: block;
+    color: #FFFFFF;
+  }
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-mid);
+    line-height: 1.75;
+    margin-bottom: 2.75rem;
+    max-width: 460px;
+    font-weight: 300;
+  }
+  .hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 3.5rem;
+  }
+  .btn-gold {
+    background: var(--gold);
+    color: #111111;
+    padding: 15px 36px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+    display: inline-block;
+  }
+  .btn-gold:hover {
+    background: #fff;
+    color: #111;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(201,162,39,0.3);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-mid);
+    padding: 14px 36px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-md);
+    transition: border-color var(--transition), color var(--transition), transform var(--transition);
+    display: inline-block;
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+  .hero-trust {
+    display: flex;
+    gap: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+  .trust-item { display: flex; flex-direction: column; gap: 3px; }
+  .trust-num {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .trust-label {
+    font-size: 11px;
+    color: var(--text-lt);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .hero-visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .svc-card-hero {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+    text-decoration: none;
+  }
+  .svc-card-hero:hover {
+    border-color: var(--gold-border);
+    transform: translateX(5px);
+    box-shadow: -3px 0 0 0 var(--gold);
+  }
+  .svc-icon {
+    width: 46px; height: 46px;
+    background: var(--gold-pale);
+    border: 1px solid var(--gold-border);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 20px;
+  }
+  .svc-card-title { font-size: 15px; font-weight: 600; color: #FFFFFF; margin-bottom: 2px; }
+  .svc-card-sub { font-size: 12px; color: var(--text-lt); }
+  .hero-badge {
+    position: absolute;
+    top: -18px; right: -18px;
+    background: var(--gold);
+    color: #111;
+    border-radius: 50%;
+    width: 88px; height: 88px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1.3;
+    box-shadow: 0 0 40px rgba(201,162,39,0.4);
+  }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: #0A0A0A;
+    padding: 1.1rem 2rem;
+    border-top: 1px solid var(--gold-border);
+    border-bottom: 1px solid var(--border);
+  }
+  .trust-bar-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .trust-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.5rem 1.25rem;
+    border-right: 1px solid var(--border);
+    flex: 1;
+    justify-content: center;
+  }
+  .trust-bar-item:last-child { border-right: none; }
+  .trust-bar-icon { font-size: 16px; }
+  .trust-bar-text { font-size: 13px; font-weight: 400; color: var(--text-lt); }
+  .trust-bar-text strong { color: var(--gold); font-weight: 600; }
+
+  /* ── SECTIONS ── */
+  .section { padding: 110px 2rem; }
+  .section-alt { background: var(--bg-alt); }
+  .container { max-width: 1160px; margin: 0 auto; }
+  .section-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px; height: 1px;
+    background: var(--gold);
+    opacity: 0.6;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(34px, 3.5vw, 50px);
+    line-height: 1.08;
+    color: #FFFFFF;
+    margin-bottom: 1.1rem;
+    font-weight: 600;
+  }
+  .section-title em { font-style: italic; font-weight: 300; color: #999; }
+  .section-sub {
+    font-size: 17px;
+    color: var(--text-mid);
+    line-height: 1.75;
+    max-width: 560px;
+    font-weight: 300;
+  }
+
+  /* ── SERVICES GRID ── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    margin-top: 4rem;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .svc-card {
+    background: var(--bg-card);
+    padding: 2.25rem 2rem;
+    transition: background var(--transition);
+    position: relative;
+    overflow: hidden;
+  }
+  .svc-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition);
+  }
+  .svc-card:hover { background: #1F1F1F; }
+  .svc-card:hover::after { transform: scaleX(1); }
+  .svc-card-icon {
+    width: 52px; height: 52px;
+    background: var(--gold-pale);
+    border: 1px solid var(--gold-border);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 1.5rem;
+  }
+  .svc-card-name {
+    font-family: var(--serif);
+    font-size: 23px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 0.6rem;
+  }
+  .svc-card-desc {
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+  }
+  .svc-link {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap var(--transition);
+  }
+  .svc-link:hover { gap: 12px; color: var(--gold); }
+  .svc-link::after { content: '→'; }
+
+  /* ── WHY US ── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .why-points { display: flex; flex-direction: column; gap: 2rem; margin-top: 2.75rem; }
+  .why-point {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .why-point:last-child { border-bottom: none; padding-bottom: 0; }
+  .why-num {
+    font-family: var(--serif);
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    min-width: 44px;
+    opacity: 0.4;
+  }
+  .why-point-title { font-size: 16px; font-weight: 600; color: #FFFFFF; margin-bottom: 6px; }
+  .why-point-text { font-size: 14px; color: var(--text-mid); line-height: 1.7; font-weight: 300; }
+  .why-right { position: relative; }
+  .why-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.75rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .why-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-deep) 100%);
+  }
+  .why-card::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; right: -40px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,162,39,0.06) 0%, transparent 70%);
+  }
+  .why-card-quote {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.55;
+    margin-bottom: 2rem;
+  }
+  .why-card-quote::before {
+    content: '\201C';
+    color: var(--gold);
+    font-size: 56px;
+    line-height: 0;
+    vertical-align: -22px;
+    margin-right: 4px;
+    font-style: normal;
+  }
+  .why-card-author { font-size: 13px; color: var(--text-lt); font-weight: 500; }
+  .why-card-author strong { color: var(--gold); display: block; font-size: 15px; margin-bottom: 3px; }
+  .why-stat-row {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+  .why-stat-num { font-family: var(--serif); font-size: 30px; font-weight: 700; color: var(--gold); line-height: 1; }
+  .why-stat-text { font-size: 11px; color: var(--text-lt); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+
+  /* ── PROCESS ── */
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 4rem;
+    position: relative;
+  }
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 32px; left: 12.5%; right: 12.5%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-border) 20%, var(--gold-border) 80%, transparent);
+    z-index: 0;
+  }
+  .process-step { text-align: center; padding: 0 1rem; position: relative; z-index: 1; }
+  .step-num {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-lt);
+    margin: 0 auto 1.5rem;
+    transition: background var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
+  }
+  .process-step:hover .step-num {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #111;
+    box-shadow: 0 0 30px rgba(201,162,39,0.35);
+  }
+  .step-title { font-size: 15px; font-weight: 600; color: #FFFFFF; margin-bottom: 0.6rem; }
+  .step-desc { font-size: 13px; color: var(--text-mid); line-height: 1.65; font-weight: 300; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 4rem;
+  }
+  .testimonial-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2.25rem;
+    transition: border-color var(--transition), transform var(--transition);
+  }
+  .testimonial-card:hover { border-color: var(--gold-border); transform: translateY(-4px); }
+  .stars { color: var(--gold); font-size: 15px; letter-spacing: 2px; margin-bottom: 1.25rem; }
+  .testimonial-text {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.65;
+    margin-bottom: 1.75rem;
+  }
+  .testimonial-author { font-size: 13px; color: var(--text-lt); font-weight: 500; }
+  .testimonial-author strong { color: var(--text-mid); display: block; margin-bottom: 2px; }
+
+  /* ── FAQ ── */
+  .faq-list { display: grid; gap: 10px; margin-top: 3rem; }
+  .faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color var(--transition);
+  }
+  .faq-item[open] { border-color: var(--gold-border); }
+  .faq-q {
+    list-style: none;
+    padding: 1.25rem 1.5rem;
+    font-weight: 600;
+    font-size: 15px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .faq-q::-webkit-details-marker { display: none; }
+  .faq-q::after {
+    content: '+';
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--gold);
+    flex-shrink: 0;
+    transition: transform var(--transition);
+  }
+  .faq-item[open] .faq-q::after { transform: rotate(45deg); }
+  .faq-a {
+    padding: 0 1.5rem 1.25rem;
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ── AREAS ── */
+  .areas-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 2.25rem;
+  }
+  .area-pill {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 40px;
+    padding: 8px 20px;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-lt);
+    transition: background var(--transition), border-color var(--transition), color var(--transition);
+    cursor: default;
+  }
+  .area-pill:hover { background: var(--gold-pale); border-color: var(--gold-border); color: var(--gold); }
+
+  /* ── CONTACT FORM ── */
+  .form-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.75rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .form-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-deep) 100%);
+  }
+  .form-input {
+    width: 100%;
+    padding: 13px 16px;
+    background: var(--bg);
+    border: 1px solid var(--border-md);
+    border-radius: var(--radius);
+    font-family: var(--sans);
+    font-size: 14px;
+    color: #FFFFFF;
+    outline: none;
+    transition: border-color var(--transition);
+  }
+  .form-input::placeholder { color: var(--text-lt); }
+  .form-input:focus { border-color: var(--gold); }
+  select.form-input { color: var(--text-lt); cursor: pointer; appearance: none; -webkit-appearance: none; }
+  select.form-input option { background: #1A1A1A; color: #fff; }
+  textarea.form-input { resize: vertical; font-family: var(--sans); }
+  .form-submit {
+    width: 100%;
+    padding: 15px;
+    background: var(--gold);
+    color: #111;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+  }
+  .form-submit:hover {
+    background: #fff;
+    box-shadow: 0 4px 24px rgba(201,162,39,0.25);
+    transform: translateY(-1px);
+  }
+  .form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+  /* ── CTA BAND ── */
+  .cta-band {
+    padding: 90px 2rem;
+    background: var(--bg-alt);
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .cta-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(201,162,39,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-band-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+  .cta-band h2 {
+    font-family: var(--serif);
+    font-size: clamp(30px, 3.5vw, 48px);
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 1.1;
+  }
+  .cta-band h2 em { font-style: italic; font-weight: 300; color: #888; }
+  .cta-band p { font-size: 16px; color: var(--text-mid); margin-top: 0.6rem; font-weight: 300; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0A0A0A;
+    padding: 70px 2rem 30px;
+    border-top: 1px solid var(--gold-border);
+  }
+  .footer-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .footer-logo {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+  .footer-tagline { font-size: 14px; color: var(--text-lt); line-height: 1.7; margin-bottom: 1.75rem; font-weight: 300; }
+  .footer-contact-line { font-size: 14px; margin-bottom: 8px; color: var(--text-lt); }
+  .footer-contact-line a { color: var(--gold); text-decoration: none; transition: color var(--transition); }
+  .footer-contact-line a:hover { color: #fff; }
+  .footer-heading {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-bottom: 1.5rem;
+  }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+  .footer-links a {
+    font-size: 14px;
+    color: var(--text-lt);
+    text-decoration: none;
+    transition: color var(--transition);
+    font-weight: 300;
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-bottom {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 12px;
+    color: var(--text-lt);
+  }
+  .license-badge {
+    background: var(--gold-pale);
+    color: var(--gold);
+    border: 1px solid var(--gold-border);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+
+  /* ── SCROLL TOP ── */
+  .scroll-top {
+    position: fixed;
+    bottom: 2rem; right: 2rem;
+    width: 46px; height: 46px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-md);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    opacity: 0; pointer-events: none;
+    transition: opacity var(--transition), border-color var(--transition), transform var(--transition);
+    z-index: 50;
+    color: var(--text-mid);
+    font-size: 18px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  }
+  .scroll-top.show { opacity: 1; pointer-events: auto; }
+  .scroll-top:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-visual { display: none; }
+    .hero { min-height: auto; padding: 110px 1.5rem 70px; }
+    .why-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .process-steps { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+    .process-steps::before { display: none; }
+    .services-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .cta-band-inner { flex-direction: column; text-align: center; }
+    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .trust-bar-inner { flex-direction: column; }
+    .trust-bar-item { border-right: none; border-bottom: 1px solid var(--border); justify-content: flex-start; padding: 0.6rem 0; }
+    .trust-bar-item:last-child { border-bottom: none; }
+    .section { padding: 75px 1.5rem; }
+    .areas-contact-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+  }
+  @media (max-width: 480px) {
+    .hero-trust { gap: 1.5rem; }
+    .why-stat-row { gap: 1.25rem; }
+  }
+</style>
 </head>
 <body>
 
-  <a class="sr-only" href="#main">Skip to content</a>
-
-  <div class="action-bar" role="region" aria-label="Quick actions">
-    <div class="action-bar__inner">
-      <div class="action-bar__left">
-        <span class="dot"></span>
-        <span><strong>Wards Electric LLC</strong> • Colorado Springs</span>
-      </div>
-      <div class="action-bar__right">
-        <a class="btn btn--ghost" href="tel:+19154870660">Call</a>
-        <a class="btn btn--ghost" href="sms:+19154870660?&body=Hi%20Wards%20Electric%20-%20I%20need%20help%20with%20">Text</a>
-        <button class="btn btn--primary" id="openBooking">Book in 60 seconds</button>
-      </div>
-    </div>
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">
+      <img src="assets/logo.jpg" alt="Wards Electric logo" />
+      <span><span class="w1">WARDS</span> <span class="w2">ELECTRIC</span> <span class="w3">LLC</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why-us">About</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="tel:+19154870660" class="nav-cta">Call 915-487-0660</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+</nav>
 
-  <header class="site-header">
-    <div class="emergency-banner" id="emergencyBanner" role="alert">
-      <span>⚡ Electrical emergency? We're available — <a href="tel:+19154870660">Call 915-487-0660</a></span>
-      <button class="emergency-banner__close" onclick="dismissEmergency()" aria-label="Dismiss">✕</button>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#why-us" onclick="closeMenu()">About</a>
+  <a href="#process" onclick="closeMenu()">Process</a>
+  <a href="#testimonials" onclick="closeMenu()">Reviews</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="#contact" onclick="closeMenu()">Get a Quote</a>
+  <a href="tel:+19154870660" class="mobile-cta">Call 915-487-0660</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow fade-up">Colorado Springs Electrician</div>
+      <h1 class="hero-headline fade-up delay-1">
+        <em>Crafted work.</em>
+        <strong>Elevated results.</strong>
+      </h1>
+      <p class="hero-sub fade-up delay-2">
+        Licensed &amp; insured electrical contractor serving Colorado Springs and the Pikes Peak region.
+        Residential and light commercial — done right, permitted, and built to last.
+      </p>
+      <div class="hero-buttons fade-up delay-3">
+        <a href="#contact" class="btn-gold">Get a Free Estimate</a>
+        <a href="tel:+19154870660" class="btn-ghost">Call 915-487-0660</a>
+      </div>
+      <div class="hero-trust fade-up delay-4">
+        <div class="trust-item">
+          <span class="trust-num">5★</span>
+          <span class="trust-label">Rated</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-num">Same Day</span>
+          <span class="trust-label">Available</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-num">Flat Rate</span>
+          <span class="trust-label">Quotes</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-num">Licensed</span>
+          <span class="trust-label">&amp; Insured</span>
+        </div>
+      </div>
     </div>
-    <div class="top-bar" role="note">
-      Same-day availability • Licensed &amp; Insured • Serving Colorado Springs + Falcon/Peyton + Woodland Park + Pueblo
-    </div>
-    <div class="header-main">
-      <a class="brand" href="index.html" aria-label="Wards Electric LLC Home">
-        <img src="assets/logo.jpg" alt="Wards Electric logo" />
-        <div class="brand__text">
-          <span class="brand__name">Wards Electric LLC</span>
-          <span class="brand__tag">Code-compliant • Clean installs • Straight talk</span>
+    <div class="hero-visual fade-up delay-2">
+      <div class="hero-badge">Free<br>Estimate</div>
+      <a href="panel-upgrade.html" class="svc-card-hero">
+        <div class="svc-icon">⚡</div>
+        <div>
+          <div class="svc-card-title">Panel Upgrades</div>
+          <div class="svc-card-sub">200A service upgrades · Same-week scheduling</div>
         </div>
       </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="nav" id="mainNav" aria-label="Primary">
-        <a href="#services">Services</a>
-        <a href="#why">Why Us</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="header-cta">
-        <a class="btn btn--ghost" href="mailto:Devonj.wardbusiness@gmail.com">Email</a>
-        <a class="btn btn--primary" href="tel:+19154870660">Call 915-487-0660</a>
-      </div>
+      <a href="ev-charger-install.html" class="svc-card-hero">
+        <div class="svc-icon">🔌</div>
+        <div>
+          <div class="svc-card-title">EV Charger Install</div>
+          <div class="svc-card-sub">Level 2 · All makes · Permit included</div>
+        </div>
+      </a>
+      <a href="dedicated-circuits.html" class="svc-card-hero">
+        <div class="svc-icon">🏠</div>
+        <div>
+          <div class="svc-card-title">Dedicated Circuits</div>
+          <div class="svc-card-sub">Hot tubs, workshops, HVAC · Clean installs</div>
+        </div>
+      </a>
+      <a href="safety-code-fixes.html" class="svc-card-hero">
+        <div class="svc-icon">🛡️</div>
+        <div>
+          <div class="svc-card-title">Safety &amp; Code Fixes</div>
+          <div class="svc-card-sub">GFCI/AFCI · Grounding · Code compliance</div>
+        </div>
+      </a>
     </div>
-  </header>
-
-  <main id="main" class="page" role="main">
-
-    <section class="hero" id="top">
-      <div class="hero__copy">
-        <p class="kicker">Colorado Springs Electrician</p>
-        <h1>Colorado Springs Electrician — Straight-Talk Pricing, Clean Work, Done Right</h1>
-        <p class="subhead">
-          Residential and light commercial electrical — panel upgrades, EV chargers, dedicated circuits,
-          lighting, troubleshooting, and more. Licensed, insured, and ready when you need us.
-        </p>
-        <div class="hero__actions">
-          <button class="btn btn--primary btn--lg" id="openBooking2">Book in 60 seconds</button>
-          <a class="btn btn--ghost btn--lg" href="tel:+19154870660">Call 915-487-0660</a>
-        </div>
-        <div class="mini">
-          <div class="mini__item">
-            <div class="mini__title">Phone</div>
-            <a href="tel:+19154870660">915-487-0660</a>
-          </div>
-          <div class="mini__item">
-            <div class="mini__title">Quotes</div>
-            <div>Flat-rate, before work starts</div>
-          </div>
-          <div class="mini__item">
-            <div class="mini__title">Service Area</div>
-            <div>Springs • Falcon/Peyton • Woodland Park • Pueblo</div>
-          </div>
-        </div>
-      </div>
-      <div class="hero__card">
-        <div class="hero__cardBody">
-          <h2 class="h3">What does it cost?</h2>
-          <p class="muted">
-            We quote flat-rate before any work starts. $65 diagnostic fee — applied to labor if we fix it same visit.
-            No surprises on the invoice.
-          </p>
-          <button class="btn btn--primary w-full" id="openBooking3">Get a free estimate</button>
-          <p class="muted small">Takes ~60 seconds. No spam.</p>
-        </div>
-      </div>
-    </section>
-
-    <div class="trust-strip" role="list" aria-label="Trust indicators">
-      <span><span class="ts-check" aria-hidden="true">✓</span> Licensed &amp; Insured</span>
-      <span><span class="ts-check" aria-hidden="true">✓</span> Flat-Rate Quotes</span>
-      <span><span class="ts-check" aria-hidden="true">✓</span> Same-Day Availability</span>
-      <span><span class="ts-check" aria-hidden="true">✓</span> Locally Owned</span>
-    </div>
-
-    <section class="section" id="services">
-      <div class="section-head">
-        <h2>What We Do</h2>
-        <p class="muted">Residential and light commercial electrical — done clean and code-compliant.</p>
-      </div>
-      <div class="cards">
-        <article class="card">
-          <h3>EV Charger Install</h3>
-          <p>Level 2 charger installation — load check, correct breaker sizing, clean conduit run, permit coordination.</p>
-          <a href="ev-charger-install.html" class="btn btn--ghost">Learn more</a>
-        </article>
-        <article class="card">
-          <h3>Panel &amp; Service Upgrade</h3>
-          <p>Panel replacement or service upgrade — load calculations, utility coordination, breaker organization, inspected and closed.</p>
-          <a href="panel-upgrade.html" class="btn btn--ghost">Learn more</a>
-        </article>
-        <article class="card">
-          <h3>Troubleshooting</h3>
-          <p>Dead outlets, tripping breakers, mystery failures — we find the problem and fix it the same visit when possible.</p>
-          <a href="troubleshooting.html" class="btn btn--ghost">Learn more</a>
-        </article>
-        <article class="card">
-          <h3>Dedicated Circuits</h3>
-          <p>Hot tub, workshop, HVAC, home office — whatever needs its own circuit, run clean and to code.</p>
-          <a href="dedicated-circuits.html" class="btn btn--ghost">Learn more</a>
-        </article>
-        <article class="card">
-          <h3>Lighting</h3>
-          <p>Recessed lighting, fixture swaps, under-cabinet, landscape — installed right, not just functional.</p>
-          <a href="lighting.html" class="btn btn--ghost">Learn more</a>
-        </article>
-        <article class="card">
-          <h3>Safety &amp; Code Fixes</h3>
-          <p>GFCI/AFCI upgrades, grounding issues, open splices, recalled panels — we bring it up to code.</p>
-          <a href="safety-code-fixes.html" class="btn btn--ghost">Learn more</a>
-        </article>
-        <article class="card">
-          <h3>Generator &amp; Backup Power</h3>
-          <p>Standby generator installation, transfer switches, interlock kits — reliable power when the grid goes down.</p>
-          <a href="generator-backup.html" class="btn btn--ghost">Learn more</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="section section--alt" id="why">
-      <div class="section-head">
-        <h2>Why Wards Electric</h2>
-        <p class="muted">Three things that actually matter when hiring an electrician.</p>
-      </div>
-      <div class="cards">
-        <article class="card">
-          <h3>Straight talk, no upsells</h3>
-          <p>We tell you what's needed, what's optional, and what it'll cost — before we start. You won't find extra line items you didn't approve on your invoice.</p>
-        </article>
-        <article class="card">
-          <h3>Clean, code-compliant work</h3>
-          <p>Everything we do is permitted where required, inspected, and built to last. We don't cut corners that come back as your problem in three years.</p>
-        </article>
-        <article class="card">
-          <h3>Real availability</h3>
-          <p>Same-day slots, honest ETAs, and a phone that gets answered. If we're booked, we tell you — not ghost you.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="reviews">
-      <div class="section-head">
-        <h2>What Customers Say</h2>
-        <p class="muted">Real feedback from Colorado Springs homeowners.</p>
-      </div>
-      <div class="cards">
-        <article class="card">
-          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>
-            <p>"Showed up on time, gave me a clear price before touching anything, and had my panel sorted the same day. No runaround, no surprises on the bill. Exactly what you want."</p>
-          </blockquote>
-          <div class="review-author">— Jason M., Colorado Springs</div>
-        </article>
-        <article class="card">
-          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>
-            <p>"We needed an EV charger installed and every other quote felt like a sales pitch. Wards came out, looked at the panel, told us exactly what was needed, and did clean work. Highly recommend."</p>
-          </blockquote>
-          <div class="review-author">— Sarah &amp; Mike T., Falcon</div>
-        </article>
-        <article class="card">
-          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>
-            <p>"Had a tripping breaker that two other electricians couldn't figure out. Devon found it in 20 minutes and fixed it the same visit. Fair price, great communication."</p>
-          </blockquote>
-          <div class="review-author">— Rachel K., Woodland Park</div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section section--alt" id="pricing">
-      <div class="section-head">
-        <h2>Transparent Pricing</h2>
-        <p class="muted">You know the cost before work starts. Every time.</p>
-      </div>
-      <div class="pricing">
-        <div class="pricing__box">
-          <h3>Diagnostic / Troubleshoot</h3>
-          <div class="price">$65</div>
-          <p class="muted">Service call fee — applied toward labor if we fix it the same visit. We find the problem and tell you the full fix cost before we proceed.</p>
-        </div>
-        <div class="pricing__box">
-          <h3>Standard Service</h3>
-          <div class="price">Flat-Rate</div>
-          <p class="muted">EV chargers, panel upgrades, dedicated circuits, lighting, code fixes — quoted flat-rate after assessment. No hourly guesswork.</p>
-        </div>
-        <div class="pricing__box">
-          <h3>Emergency / Same-Day</h3>
-          <div class="price">Available</div>
-          <p class="muted">Hazards, outages, and urgent jobs — call us. Same-day slots available most days. We'll give you availability and a price upfront.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <h2>How It Works</h2>
-        <p class="muted">Simple process, no surprises.</p>
-      </div>
-      <div class="process-grid">
-        <div class="process-step">
-          <div class="process-num">1</div>
-          <h3>Book in 60 seconds</h3>
-          <p>Fill out the quick form — name, phone, what you need, and urgency. That's it. No account required.</p>
-        </div>
-        <div class="process-step">
-          <div class="process-num">2</div>
-          <h3>We confirm &amp; arrive</h3>
-          <p>We'll confirm your slot by call or text, give you a real ETA, and show up on time — or let you know if anything changes.</p>
-        </div>
-        <div class="process-step">
-          <div class="process-num">3</div>
-          <h3>Straight-talk assessment</h3>
-          <p>We look at the actual problem and tell you what's needed, what it'll cost, and what's optional. You approve before we start.</p>
-        </div>
-        <div class="process-step">
-          <div class="process-num">4</div>
-          <h3>Clean, code-compliant work</h3>
-          <p>Work done right the first time — permitted where required, inspected and closed, and cleaned up when we leave.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--alt" id="faq">
-      <div class="section-head">
-        <h2>Common Questions</h2>
-      </div>
-      <div class="faq-list">
-        <details class="faq-item">
-          <summary class="faq-q">Do you pull permits?</summary>
-          <div class="faq-a">Yes — any work that requires a permit in Colorado Springs or surrounding areas gets one. We handle the application, schedule the inspection, and make sure it closes. Work without a permit can void insurance and cause issues when you sell your home.</div>
-        </details>
-        <details class="faq-item">
-          <summary class="faq-q">Do you service my area?</summary>
-          <div class="faq-a">We serve Colorado Springs, Falcon/Peyton, Woodland Park, and Pueblo. If you're nearby and not sure, call or text — we'll tell you straight.</div>
-        </details>
-        <details class="faq-item">
-          <summary class="faq-q">How do flat-rate quotes work?</summary>
-          <div class="faq-a">After we see the job (in person or by enough detail), we give you one price for the complete work. That price doesn't change unless the scope does — and if it does, we tell you before proceeding. No hourly surprises.</div>
-        </details>
-        <details class="faq-item">
-          <summary class="faq-q">Can you do emergency or same-day work?</summary>
-          <div class="faq-a">Yes. If you have a hazard — burning smell, sparking, outage — call us directly at 915-487-0660. For same-day non-emergency jobs, book online or text and we'll confirm availability. We keep slots open for urgent calls most days.</div>
-        </details>
-        <details class="faq-item">
-          <summary class="faq-q">What panel brands and equipment do you work with?</summary>
-          <div class="faq-a">We install and service Square D, Eaton, Siemens, Leviton, and other major brands. We don't touch Federal Pacific or Zinsco panels for repair — those need replacement, and we'll tell you why. For EV chargers, we work with any EVSE brand.</div>
-        </details>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="section-head">
-        <h2>Get In Touch</h2>
-        <p class="muted">Reach us however works best for you.</p>
-      </div>
-      <div class="contactGrid">
-        <div class="contactCard">
-          <h3>Phone &amp; Text</h3>
-          <div class="contactLinks">
-            <a href="tel:+19154870660">Call 915-487-0660</a>
-            <a href="sms:+19154870660?&body=Hi%20Wards%20Electric%20-%20I%20need%20help%20with%20">Text 915-487-0660</a>
-          </div>
-        </div>
-        <div class="contactCard">
-          <h3>Email</h3>
-          <div class="contactLinks">
-            <a href="mailto:Devonj.wardbusiness@gmail.com">Devonj.wardbusiness@gmail.com</a>
-          </div>
-        </div>
-        <div class="contactCard">
-          <h3>Hours</h3>
-          <p class="muted">Mon–Sat, 7am–7pm<br />Emergency availability outside hours — call first.</p>
-        </div>
-      </div>
-      <div style="text-align:center; margin-top: 2rem;">
-        <button class="btn btn--primary btn--lg" id="openBooking4">Book in 60 seconds</button>
-        <a class="btn btn--ghost btn--lg" href="tel:+19154870660" style="margin-left: 1rem;">Call 915-487-0660</a>
-      </div>
-    </section>
-
-    <section class="section section--alt">
-      <div class="ctaPanel">
-        <h3>Ready to get started?</h3>
-        <p class="muted">Book online in about 60 seconds — no account, no spam. Or just call or text.</p>
-        <button class="btn btn--primary btn--lg w-full" id="openBooking5">Book Now</button>
-        <div class="ctaPanel__row">
-          <a class="btn btn--ghost w-full" href="tel:+19154870660">Call</a>
-          <a class="btn btn--ghost w-full" href="sms:+19154870660?&body=Hi%20Wards%20Electric%20-%20I%20need%20help%20with%20">Text</a>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <p>&copy; <span id="year"></span> Wards Electric LLC. All rights reserved.</p>
-      <p class="muted small">
-        <a href="ev-charger-install.html">EV Charger Install</a> •
-        <a href="panel-upgrade.html">Panel Upgrade</a> •
-        <a href="troubleshooting.html">Troubleshooting</a> •
-        <a href="dedicated-circuits.html">Dedicated Circuits</a> •
-        <a href="lighting.html">Lighting</a> •
-        <a href="safety-code-fixes.html">Safety &amp; Code Fixes</a> •
-        <a href="generator-backup.html">Generator &amp; Backup</a>
-      </p>
-      <p class="muted small">
-        <a href="#services">Services</a> •
-        <a href="#why">Why Us</a> •
-        <a href="#reviews">Reviews</a> •
-        <a href="#pricing">Pricing</a> •
-        <a href="#faq">FAQ</a> •
-        <a href="#contact">Contact</a> •
-        <a href="contact.html">Contact Page</a>
-      </p>
-    </footer>
-
-  </main>
-
-  <div class="mobile-call-bar" id="mobileCallBar">
-    <a class="mobile-call-bar__btn" href="tel:+19154870660"><span aria-hidden="true">📞</span> Call Now — 915-487-0660</a>
-    <button class="mobile-call-bar__close" onclick="dismissCallBar()" aria-label="Dismiss call bar">✕</button>
   </div>
+</section>
 
-  <div class="modal" id="bookingModal" aria-hidden="true">
-    <div class="modal__backdrop" id="closeBooking"></div>
-    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
-      <div class="modal__head">
-        <div><div class="kicker">Book in ~60 seconds</div><h2 id="bookingTitle">Tell us what you need</h2></div>
-        <button class="x" id="closeBooking2" aria-label="Close">✕</button>
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-bar-item">
+      <span class="trust-bar-icon">✓</span>
+      <span class="trust-bar-text"><strong>Licensed &amp; Insured</strong> in Colorado</span>
+    </div>
+    <div class="trust-bar-item">
+      <span class="trust-bar-icon">⚡</span>
+      <span class="trust-bar-text"><strong>Same-Day</strong> Service Available</span>
+    </div>
+    <div class="trust-bar-item">
+      <span class="trust-bar-icon">📋</span>
+      <span class="trust-bar-text"><strong>Permits Pulled</strong> — We Handle It All</span>
+    </div>
+    <div class="trust-bar-item">
+      <span class="trust-bar-icon">⭐</span>
+      <span class="trust-bar-text"><strong>5-Star Rated</strong> on Google</span>
+    </div>
+    <div class="trust-bar-item">
+      <span class="trust-bar-icon">💬</span>
+      <span class="trust-bar-text"><strong>Flat-Rate Quotes</strong> — No Surprises</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section section-alt" id="services">
+  <div class="container">
+    <div class="section-eyebrow fade-up">What We Do</div>
+    <h2 class="section-title fade-up delay-1">Every electrical need,<br><em>handled with precision.</em></h2>
+    <p class="section-sub fade-up delay-2">From panel upgrades to EV charger installs — we bring the same care to every job, big or small.</p>
+    <div class="services-grid fade-up delay-2">
+      <div class="svc-card">
+        <div class="svc-card-icon">⚡</div>
+        <div class="svc-card-name">Panel Upgrades</div>
+        <p class="svc-card-desc">Outdated panel? We upgrade to 200A service with full permit and inspection. Most jobs completed in a single day.</p>
+        <a href="panel-upgrade.html" class="svc-link">Learn more</a>
       </div>
-      <form id="bookingForm" class="form">
-        <div class="grid">
-          <div><label>Full name</label><input name="name" required autocomplete="name" /></div>
-          <div><label>Phone</label><input name="phone" required autocomplete="tel" /></div>
-          <div><label>Email</label><input name="email" type="email" autocomplete="email" /></div>
-          <div><label>Service address</label><input name="address" autocomplete="street-address" /></div>
+      <div class="svc-card">
+        <div class="svc-card-icon">🔌</div>
+        <div class="svc-card-name">EV Charger Install</div>
+        <p class="svc-card-desc">Level 2 charger installation for all makes and models. We handle the permit, the wiring, and the inspection. Ready in a day.</p>
+        <a href="ev-charger-install.html" class="svc-link">Learn more</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-card-icon">🔍</div>
+        <div class="svc-card-name">Troubleshooting</div>
+        <p class="svc-card-desc">Dead outlets, tripping breakers, flickering lights — we find the problem fast and fix it same visit when possible. $65 service call.</p>
+        <a href="troubleshooting.html" class="svc-link">Learn more</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-card-icon">🏠</div>
+        <div class="svc-card-name">Dedicated Circuits</div>
+        <p class="svc-card-desc">Hot tub, workshop, HVAC, home office — whatever needs its own circuit, run clean and to code. Quoted flat-rate upfront.</p>
+        <a href="dedicated-circuits.html" class="svc-link">Learn more</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-card-icon">💡</div>
+        <div class="svc-card-name">Lighting</div>
+        <p class="svc-card-desc">Recessed lighting, fixture swaps, under-cabinet, landscape — installed right, not just functional. Same attention to every detail.</p>
+        <a href="lighting.html" class="svc-link">Learn more</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-card-icon">🛡️</div>
+        <div class="svc-card-name">Safety &amp; Code Fixes</div>
+        <p class="svc-card-desc">GFCI/AFCI upgrades, grounding issues, recalled panels, unpermitted work — we bring it up to code and close the inspection.</p>
+        <a href="safety-code-fixes.html" class="svc-link">Learn more</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-card-icon">⚙️</div>
+        <div class="svc-card-name">Generator &amp; Backup</div>
+        <p class="svc-card-desc">Standby generator installation, transfer switches, interlock kits — reliable power when the grid goes down. Colorado-winter ready.</p>
+        <a href="generator-backup.html" class="svc-link">Learn more</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section" id="why-us">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-left">
+        <div class="section-eyebrow fade-up">Why Wards Electric</div>
+        <h2 class="section-title fade-up delay-1">The difference is in<br><em>the details.</em></h2>
+        <div class="why-points">
+          <div class="why-point fade-up delay-1">
+            <span class="why-num">01</span>
+            <div>
+              <div class="why-point-title">Straight talk, no upsells</div>
+              <p class="why-point-text">We tell you what's needed, what's optional, and what it costs — before we start. You won't find extra line items you didn't approve on the invoice.</p>
+            </div>
+          </div>
+          <div class="why-point fade-up delay-2">
+            <span class="why-num">02</span>
+            <div>
+              <div class="why-point-title">We pull the permits</div>
+              <p class="why-point-text">No cutting corners. Every job that requires a permit gets one. Protects your home's value, keeps your insurance valid, and closes clean.</p>
+            </div>
+          </div>
+          <div class="why-point fade-up delay-3">
+            <span class="why-num">03</span>
+            <div>
+              <div class="why-point-title">Flat-rate pricing, always</div>
+              <p class="why-point-text">You get a written quote before we start. The price you're quoted is the price you pay. No hourly surprises, ever.</p>
+            </div>
+          </div>
+          <div class="why-point fade-up delay-4">
+            <span class="why-num">04</span>
+            <div>
+              <div class="why-point-title">Real availability</div>
+              <p class="why-point-text">Same-day slots, honest ETAs, and a phone that gets answered. If we're booked, we tell you — not ghost you.</p>
+            </div>
+          </div>
         </div>
-        <div class="grid">
-          <div>
-            <label>Service type</label>
-            <select name="serviceType" class="qb-select" required>
-              <option value="">Select…</option>
+      </div>
+      <div class="why-right fade-up delay-2">
+        <div class="why-card">
+          <p class="why-card-quote">Devon came out the same day, gave me a fair quote on the spot, and had the panel upgraded the next morning. No BS, no upsells, just clean work.</p>
+          <div class="why-card-author">
+            <strong>Sarah M.</strong>
+            Colorado Springs homeowner
+          </div>
+          <div class="why-stat-row">
+            <div class="why-stat">
+              <div class="why-stat-num">100%</div>
+              <div class="why-stat-text">Permit compliant</div>
+            </div>
+            <div class="why-stat">
+              <div class="why-stat-num">$65</div>
+              <div class="why-stat-text">Diagnostic fee</div>
+            </div>
+            <div class="why-stat">
+              <div class="why-stat-num">5★</div>
+              <div class="why-stat-text">Google rating</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section section-alt" id="process">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-eyebrow fade-up" style="justify-content:center;">How It Works</div>
+      <h2 class="section-title fade-up delay-1" style="max-width:540px;margin:0 auto 0.75rem;">From first call to<br><em>finished job.</em></h2>
+      <p class="section-sub fade-up delay-2" style="margin:0 auto;text-align:center;">Simple, transparent, no surprises. Here's exactly what to expect.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step fade-up delay-1">
+        <div class="step-num">1</div>
+        <div class="step-title">You Reach Out</div>
+        <p class="step-desc">Call, text, or fill out the form below. Same-day response, day or night.</p>
+      </div>
+      <div class="process-step fade-up delay-2">
+        <div class="step-num">2</div>
+        <div class="step-title">Free On-Site Estimate</div>
+        <p class="step-desc">We come to you, assess the job, and give you a flat-rate quote in writing. No obligation.</p>
+      </div>
+      <div class="process-step fade-up delay-3">
+        <div class="step-num">3</div>
+        <div class="step-title">We Get to Work</div>
+        <p class="step-desc">Permits pulled, work done clean, inspection scheduled. You're kept in the loop throughout.</p>
+      </div>
+      <div class="process-step fade-up delay-4">
+        <div class="step-num">4</div>
+        <div class="step-title">Done Right, Guaranteed</div>
+        <p class="step-desc">Job complete, cleanup done, workmanship guaranteed. Code-compliant, inspected, closed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-eyebrow fade-up" style="justify-content:center;">What Customers Say</div>
+      <h2 class="section-title fade-up delay-1" style="text-align:center;">Don't take our word for it.</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up delay-1">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">Called at 7pm about a tripped breaker that wouldn't reset. Devon responded fast and was at my house within the hour. Panel issue fixed, same visit. Incredible.</p>
+        <div class="testimonial-author"><strong>Jason M.</strong>Colorado Springs, CO</div>
+      </div>
+      <div class="testimonial-card fade-up delay-2">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">Had three other electricians ghost me on estimates. Devon showed up on time, quoted me fairly, and did the EV charger install the next morning. My Tesla thanks him.</p>
+        <div class="testimonial-author"><strong>Sarah &amp; Mike T.</strong>Falcon, CO</div>
+      </div>
+      <div class="testimonial-card fade-up delay-3">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">Needed code fixes on my older home before selling. Devon handled the permits, the inspection, everything. Cleanest work I've seen. Closed on time because of him.</p>
+        <div class="testimonial-author"><strong>Rachel K.</strong>Woodland Park, CO</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-alt" id="faq">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:0;">
+      <div class="section-eyebrow fade-up" style="justify-content:center;">Common Questions</div>
+      <h2 class="section-title fade-up delay-1" style="text-align:center;margin-bottom:0.5rem;">Good questions.</h2>
+    </div>
+    <div class="faq-list fade-up delay-2" style="max-width:760px;margin:0 auto;">
+      <details class="faq-item">
+        <summary class="faq-q">Do you pull permits?</summary>
+        <div class="faq-a">Yes — any work that requires a permit gets one. We handle the application, schedule the inspection, and make sure it closes. Work without a permit can void your homeowner's insurance and cause problems when you sell.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Do you service my area?</summary>
+        <div class="faq-a">We serve Colorado Springs, Falcon/Peyton, Woodland Park, and Pueblo. If you're nearby and not sure, call or text — we'll tell you straight.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How do flat-rate quotes work?</summary>
+        <div class="faq-a">After we see the job (in person or with enough detail), we give you one price for the complete work. That price doesn't change unless the scope does — and if it does, we tell you before proceeding. No hourly surprises.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can you do emergency or same-day work?</summary>
+        <div class="faq-a">Yes. If you have a hazard — burning smell, sparking, outage — call us directly at 915-487-0660. For same-day non-emergency jobs, fill out the form or text us. We keep slots open for urgent calls most days.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What's the $65 service call fee?</summary>
+        <div class="faq-a">The $65 diagnostic fee covers our time to come out and assess the problem. If we fix it the same visit, that $65 applies toward the labor — it's not an extra charge on top.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREAS + CONTACT -->
+<section class="section">
+  <div class="container">
+    <div class="areas-contact-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;">
+      <div>
+        <div class="section-eyebrow fade-up">Where We Work</div>
+        <h2 class="section-title fade-up delay-1">Serving Colorado Springs<br><em>and surrounding areas.</em></h2>
+        <p class="section-sub fade-up delay-2" style="margin-bottom:2rem;">Based in Colorado Springs — serving the greater Pikes Peak region and surrounding communities.</p>
+        <div class="areas-grid fade-up delay-3">
+          <span class="area-pill">Colorado Springs</span>
+          <span class="area-pill">Falcon</span>
+          <span class="area-pill">Peyton</span>
+          <span class="area-pill">Woodland Park</span>
+          <span class="area-pill">Pueblo</span>
+          <span class="area-pill">Monument</span>
+          <span class="area-pill">Manitou Springs</span>
+          <span class="area-pill">Security / Widefield</span>
+          <span class="area-pill">Fountain</span>
+          <span class="area-pill">Black Forest</span>
+        </div>
+        <div style="margin-top:2.5rem;">
+          <p style="font-size:14px;color:var(--text-lt);margin-bottom:0.5rem;">Phone &amp; Text</p>
+          <a href="tel:+19154870660" style="font-family:var(--serif);font-size:28px;font-weight:700;color:var(--gold);letter-spacing:0.02em;">915-487-0660</a>
+          <p style="margin-top:1rem;font-size:14px;color:var(--text-lt);">Email: <a href="mailto:Devonj.wardbusiness@gmail.com" style="color:var(--gold);">Devonj.wardbusiness@gmail.com</a></p>
+          <p style="margin-top:0.5rem;font-size:13px;color:var(--text-lt);">Mon–Sat, 7am–7pm · Emergency availability — call first</p>
+        </div>
+      </div>
+      <div id="contact" class="fade-up delay-2">
+        <div class="form-card">
+          <div class="section-eyebrow" style="margin-bottom:1rem;">Free Estimate</div>
+          <h3 style="font-family:var(--serif);font-size:28px;color:#FFFFFF;margin-bottom:0.5rem;font-weight:600;">Get a quote today.</h3>
+          <p style="font-size:14px;color:var(--text-mid);margin-bottom:2rem;font-weight:300;">Fill out the form and we'll reach out shortly.</p>
+          <form id="contactForm" style="display:flex;flex-direction:column;gap:14px;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+              <input type="text" name="firstName" placeholder="First name" required class="form-input" />
+              <input type="text" name="lastName" placeholder="Last name" class="form-input" />
+            </div>
+            <input type="tel" name="phone" placeholder="Phone number" required class="form-input" />
+            <input type="email" name="email" placeholder="Email address" class="form-input" />
+            <select name="serviceType" required class="form-input">
+              <option value="" disabled selected>Select service needed</option>
+              <option>Panel Upgrade</option>
               <option>EV Charger Install</option>
-              <option>Panel / Service Upgrade</option>
               <option>Troubleshooting</option>
               <option>Dedicated Circuit</option>
               <option>Lighting</option>
               <option>Safety / Code Fix</option>
               <option>Generator / Backup Power</option>
-              <option>Other</option>
+              <option>Other / Not Sure</option>
             </select>
+            <textarea name="message" placeholder="Tell us a bit about the job..." rows="3" class="form-input"></textarea>
+            <button type="submit" class="form-submit" id="formSubmitBtn">Send My Request →</button>
+            <p id="formError" style="display:none;text-align:center;font-size:13px;color:#e57373;margin-top:4px;">⚠️ Didn't send. Try calling or texting us at 915-487-0660.</p>
+          </form>
+          <div id="form-success" style="display:none;text-align:center;padding:2.5rem 1rem;">
+            <div style="font-size:36px;margin-bottom:1rem;">✅</div>
+            <div style="font-family:var(--serif);font-size:26px;color:#FFFFFF;margin-bottom:0.5rem;font-weight:600;">Got it — we'll be in touch.</div>
+            <p style="font-size:14px;color:var(--text-mid);font-weight:300;">Expect a reply shortly. Check your phone.</p>
           </div>
-          <div>
-            <label>Urgency</label>
-            <select name="urgency" class="qb-select" required>
-              <option value="">Select…</option>
-              <option>Emergency (hazard / burning smell / outage)</option>
-              <option>ASAP (today/tomorrow)</option>
-              <option>This week</option>
-              <option>Not urgent</option>
-            </select>
-          </div>
+          <p style="text-align:center;font-size:12px;color:var(--text-lt);margin-top:1.25rem;">Or call / text directly: <a href="tel:+19154870660" style="color:var(--gold);font-weight:600;">915-487-0660</a></p>
         </div>
-        <div><label>Details</label><textarea name="message" required placeholder="Describe what you need…"></textarea></div>
-        <label class="consent">
-          <input type="checkbox" name="consent" required />
-          <span>I agree to be contacted by call/text/email about this request.</span>
-        </label>
-        <div class="form__actions">
-          <button type="submit" class="btn btn--primary btn--lg w-full" id="submitBtn">Submit &amp; route to dispatcher</button>
-          <p class="muted small" id="statusText"></p>
-        </div>
-      </form>
+      </div>
     </div>
   </div>
+</section>
 
-  <script>
-    const WEBHOOK_URL = "https://wards-electrical.app.n8n.cloud/webhook/0c41a587-89af-4066-9aa8-365de46e1906";
-    (function(){ if(sessionStorage.getItem('emergencyDismissed')){ const b=document.getElementById('emergencyBanner'); if(b) b.style.display='none'; }})();
-    function dismissEmergency(){ sessionStorage.setItem('emergencyDismissed','1'); const b=document.getElementById('emergencyBanner'); if(b) b.style.display='none'; }
-    (function(){ if(sessionStorage.getItem('callBarDismissed')){ const b=document.getElementById('mobileCallBar'); if(b) b.style.display='none'; }})();
-    function dismissCallBar(){ sessionStorage.setItem('callBarDismissed','1'); const b=document.getElementById('mobileCallBar'); if(b) b.style.display='none'; }
-    document.getElementById("year").textContent = new Date().getFullYear();
-    const navToggle=document.getElementById("navToggle"), mainNav=document.getElementById("mainNav");
-    navToggle.addEventListener("click",()=>{ const open=mainNav.classList.toggle("nav--open"); navToggle.classList.toggle("nav-toggle--open",open); navToggle.setAttribute("aria-expanded",open); });
-    mainNav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{ mainNav.classList.remove("nav--open"); navToggle.classList.remove("nav-toggle--open"); navToggle.setAttribute("aria-expanded","false"); }));
-    const modal=document.getElementById("bookingModal");
-    const openBtns=["openBooking","openBooking2","openBooking3","openBooking4","openBooking5"].map(id=>document.getElementById(id)).filter(Boolean);
-    const closeBtns=[document.getElementById("closeBooking"),document.getElementById("closeBooking2")].filter(Boolean);
-    function openModal(){ modal.classList.add("is-open"); modal.setAttribute("aria-hidden","false"); document.body.classList.add("modal-open"); }
-    function closeModal(){ modal.classList.remove("is-open"); modal.setAttribute("aria-hidden","true"); document.body.classList.remove("modal-open"); }
-    openBtns.forEach(b=>b.addEventListener("click",e=>{ e.preventDefault(); openModal(); }));
-    closeBtns.forEach(b=>b.addEventListener("click",e=>{ e.preventDefault(); closeModal(); }));
-    window.addEventListener("keydown",e=>{ if(e.key==="Escape"&&modal.classList.contains("is-open")) closeModal(); });
-    const form=document.getElementById("bookingForm"), statusText=document.getElementById("statusText"), submitBtn=document.getElementById("submitBtn");
-    form.addEventListener("submit",async(e)=>{
-      e.preventDefault(); statusText.textContent=""; submitBtn.disabled=true; submitBtn.textContent="Sending…";
-      const data=Object.fromEntries(new FormData(form).entries());
-      data.source="website"; data.page="home"; data.timestamp=new Date().toISOString();
-      try {
-        const res=await fetch(WEBHOOK_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)});
-        if(!res.ok) throw new Error("failed");
-        statusText.textContent="✅ Sent. We'll reach out shortly."; submitBtn.textContent="Submitted";
-        setTimeout(()=>{ closeModal(); form.reset(); submitBtn.disabled=false; submitBtn.textContent="Submit & route to dispatcher"; statusText.textContent=""; },1200);
-      } catch(err){ statusText.textContent="⚠️ Didn't send. Try calling or texting us."; submitBtn.disabled=false; submitBtn.textContent="Submit & route to dispatcher"; }
-    });
-  </script>
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="cta-band-inner">
+    <div>
+      <h2><em>Electrical problem?</em><br>Let's fix it today.</h2>
+      <p>Same-day service available. Free estimates. No obligation.</p>
+    </div>
+    <a href="tel:+19154870660" class="btn-gold" style="font-size:14px;padding:17px 42px;white-space:nowrap;">Call 915-487-0660</a>
+  </div>
+</div>
 
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="#home" class="footer-logo">
+        <span style="color:#fff;">WARDS</span> <span style="color:var(--gold);">ELECTRIC</span> <span style="color:var(--gold-deep);">LLC</span>
+      </a>
+      <p class="footer-tagline">Crafted work. Elevated results.<br>Colorado Springs' trusted electrical contractor — licensed, insured, and committed to doing it right.</p>
+      <p class="footer-contact-line">📞 <a href="tel:+19154870660">915-487-0660</a></p>
+      <p class="footer-contact-line">✉️ <a href="mailto:Devonj.wardbusiness@gmail.com">Devonj.wardbusiness@gmail.com</a></p>
+      <p class="footer-contact-line" style="margin-top:0.75rem;">Colorado Springs, CO</p>
+      <div style="margin-top:1.25rem;"><span class="license-badge">Licensed &amp; Insured · CO</span></div>
+    </div>
+    <div>
+      <div class="footer-heading">Services</div>
+      <ul class="footer-links">
+        <li><a href="panel-upgrade.html">Panel Upgrades</a></li>
+        <li><a href="ev-charger-install.html">EV Charger Install</a></li>
+        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+        <li><a href="dedicated-circuits.html">Dedicated Circuits</a></li>
+        <li><a href="lighting.html">Lighting</a></li>
+        <li><a href="safety-code-fixes.html">Safety &amp; Code Fixes</a></li>
+        <li><a href="generator-backup.html">Generator &amp; Backup</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Service Areas</div>
+      <ul class="footer-links">
+        <li><a href="#contact">Colorado Springs</a></li>
+        <li><a href="#contact">Falcon / Peyton</a></li>
+        <li><a href="#contact">Woodland Park</a></li>
+        <li><a href="#contact">Pueblo</a></li>
+        <li><a href="#contact">Monument</a></li>
+        <li><a href="#contact">Manitou Springs</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Company</div>
+      <ul class="footer-links">
+        <li><a href="#why-us">About</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Get an Estimate</a></li>
+        <li><a href="contact.html">Contact Page</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="year"></span> Wards Electric LLC · Colorado Springs, CO · All rights reserved.</span>
+    <span style="color:var(--gold);font-size:11px;letter-spacing:0.08em;">CODE-COMPLIANT · CLEAN INSTALLS · STRAIGHT TALK</span>
+  </div>
+</footer>
+
+<!-- SCROLL TOP -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">↑</button>
+
+<script>
+  const WEBHOOK_URL = "https://wards-electrical.app.n8n.cloud/webhook/0c41a587-89af-4066-9aa8-365de46e1906";
+
+  // Year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Nav scroll
+  const navbar = document.getElementById("navbar");
+  const scrollTopBtn = document.getElementById("scrollTop");
+  window.addEventListener("scroll", () => {
+    navbar.classList.toggle("scrolled", window.scrollY > 20);
+    scrollTopBtn.classList.toggle("show", window.scrollY > 400);
+  });
+
+  // Mobile menu
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+  hamburger.addEventListener("click", () => {
+    const open = mobileMenu.classList.toggle("open");
+    hamburger.setAttribute("aria-expanded", open);
+    mobileMenu.setAttribute("aria-hidden", !open);
+  });
+  function closeMenu() {
+    mobileMenu.classList.remove("open");
+    hamburger.setAttribute("aria-expanded", "false");
+    mobileMenu.setAttribute("aria-hidden", "true");
+  }
+  window.addEventListener("keydown", e => { if (e.key === "Escape") closeMenu(); });
+
+  // Fade-up animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
+
+  // Contact form
+  const contactForm = document.getElementById("contactForm");
+  const formSubmitBtn = document.getElementById("formSubmitBtn");
+  const formError = document.getElementById("formError");
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    formError.style.display = "none";
+    formSubmitBtn.disabled = true;
+    formSubmitBtn.textContent = "Sending…";
+    const data = Object.fromEntries(new FormData(contactForm).entries());
+    data.source = "website";
+    data.page = "home";
+    data.timestamp = new Date().toISOString();
+    try {
+      const res = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+      if (!res.ok) throw new Error("failed");
+      contactForm.style.display = "none";
+      document.getElementById("form-success").style.display = "block";
+    } catch (err) {
+      formError.style.display = "block";
+      formSubmitBtn.disabled = false;
+      formSubmitBtn.textContent = "Send My Request →";
+    }
+  });
+</script>
 </body>
 </html>
