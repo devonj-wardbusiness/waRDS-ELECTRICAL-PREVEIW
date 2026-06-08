@@ -112,6 +112,8 @@
     gap: 10px;
   }
   .nav-logo img { height: 34px; width: auto; border-radius: 5px; object-fit: contain; }
+  .nav-logo .logo-crop { display: inline-block; width: 77px; height: 34px; overflow: hidden; border-radius: 5px; position: relative; }
+  .nav-logo .logo-crop img { position: absolute; top: -39px; left: -145px; width: 243px; height: 162px; max-width: none; border-radius: 0; }
   .nav-logo .w1 { color: var(--gold); }
   .nav-logo .w2 { color: #FFFFFF; }
   .nav-logo .w3 { color: var(--text-lt); font-size: 0.65em; letter-spacing: 0.15em; font-weight: 400; }
@@ -954,7 +956,7 @@
 <nav id="navbar">
   <div class="nav-inner">
     <a href="#home" class="nav-logo">
-      <img src="assets/944E936E-1C9E-4781-AC70-04BEC5122BAE.png" alt="Elevated Electrical logo" />
+      <span class="logo-crop"><img src="assets/944E936E-1C9E-4781-AC70-04BEC5122BAE.png" alt="Elevated Electrical logo" /></span>
       <span style="display:flex;flex-direction:column;line-height:1.1;gap:1px;">
         <span><span class="w1">ELEVATED</span> <span class="w2">ELECTRICAL</span></span>
         <span class="w3">BY WARDS ELECTRIC</span>
