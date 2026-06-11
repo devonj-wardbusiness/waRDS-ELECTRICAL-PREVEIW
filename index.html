@@ -6,12 +6,17 @@
 <title>Elevated Electrical | Colorado Springs Electrician — by Wards Electric</title>
 <meta name="description" content="Elevated Electrical by Wards Electric — licensed electrician in Colorado Springs, CO. Panel upgrades, EV charger installation, dedicated circuits, lighting &amp; more. Flat-rate quotes. Call 915-487-0660." />
 <link rel="canonical" href="https://wardselectricllc.com/" />
-<link rel="icon" href="assets/944E936E-1C9E-4781-AC70-04BEC5122BAE.png" />
+<link rel="icon" href="assets/favicon-512.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 <meta property="og:title" content="Elevated Electrical | Colorado Springs Electrician — by Wards Electric" />
 <meta property="og:description" content="Crafted work. Elevated results. Licensed &amp; insured electrical contractor in Colorado Springs. Flat-rate quotes, same-day availability." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wardselectricllc.com/" />
-<meta property="og:image" content="https://wardselectricllc.com/assets/944E936E-1C9E-4781-AC70-04BEC5122BAE.png" />
+<meta property="og:image" content="https://wardselectricllc.com/assets/og-card.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Elevated Electrical | Colorado Springs Electrician — by Wards Electric" />
+<meta name="twitter:description" content="Crafted work. Elevated results. Licensed &amp; insured electrical contractor in Colorado Springs. Flat-rate quotes, same-day availability." />
+<meta name="twitter:image" content="https://wardselectricllc.com/assets/og-card.jpg" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -21,10 +26,39 @@
   "telephone": "915-487-0660",
   "email": "Devonj.wardbusiness@gmail.com",
   "url": "https://wardselectricllc.com",
-  "logo": "https://wardselectricllc.com/assets/944E936E-1C9E-4781-AC70-04BEC5122BAE.png",
+  "logo": "https://wardselectricllc.com/assets/favicon-512.png",
   "address": { "@type": "PostalAddress", "addressLocality": "Colorado Springs", "addressRegion": "CO", "addressCountry": "US" },
   "areaServed": ["Colorado Springs, CO", "Falcon, CO", "Peyton, CO", "Woodland Park, CO", "Pueblo, CO"],
   "openingHours": "Mo-Sa 07:00-19:00"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Do you pull permits?","acceptedAnswer":{"@type":"Answer","text":"Yes — any work that requires a permit gets one. We handle the application, schedule the inspection, and make sure it closes. Work without a permit can void your homeowner's insurance and cause problems when you sell."}},
+    {"@type":"Question","name":"Do you service my area?","acceptedAnswer":{"@type":"Answer","text":"We serve Colorado Springs, Falcon/Peyton, Woodland Park, and Pueblo. If you're nearby and not sure, call or text — we'll tell you straight."}},
+    {"@type":"Question","name":"How do flat-rate quotes work?","acceptedAnswer":{"@type":"Answer","text":"After we see the job (in person or with enough detail), we give you one price for the complete work. That price doesn't change unless the scope does — and if it does, we tell you before proceeding. No hourly surprises."}},
+    {"@type":"Question","name":"Can you do emergency or same-day work?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you have a hazard — burning smell, sparking, outage — call us directly at 915-487-0660. For same-day non-emergency jobs, fill out the form or text us. We keep slots open for urgent calls most days."}},
+    {"@type":"Question","name":"What's the $65 service call fee?","acceptedAnswer":{"@type":"Answer","text":"The $65 diagnostic fee covers our time to come out and assess the problem. If we fix it the same visit, that $65 applies toward the labor — it's not an extra charge on top."}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "name": "Project Photos",
+  "description": "Real electrical work by Elevated Electrical — clean installs, code-compliant.",
+  "associatedMedia": [
+    {"@type":"ImageObject","name":"Accent Lighting","contentUrl":"https://wardselectricllc.com/assets/photos/photo-1.jpg"},
+    {"@type":"ImageObject","name":"Kitchen Lighting Retrofit","contentUrl":"https://wardselectricllc.com/assets/photos/photo-2.jpg"},
+    {"@type":"ImageObject","name":"Whole Shop Build","contentUrl":"https://wardselectricllc.com/assets/photos/photo-3.jpg"},
+    {"@type":"ImageObject","name":"Panel Upgrade","contentUrl":"https://wardselectricllc.com/assets/photos/photo-4.jpg"},
+    {"@type":"ImageObject","name":"Garage Heater Install","contentUrl":"https://wardselectricllc.com/assets/photos/photo-5.jpg"},
+    {"@type":"ImageObject","name":"EV Charger Installation","contentUrl":"https://wardselectricllc.com/assets/photos/photo-6.jpg"}
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,8 +75,8 @@
     --gold-pale:   rgba(201,162,39,0.12);
     --gold-border: rgba(201,162,39,0.25);
     --text:        #FFFFFF;
-    --text-mid:    #999999;
-    --text-lt:     #666666;
+    --text-mid:    #ADADAD;
+    --text-lt:     #8F8F8F;
     --border:      rgba(255,255,255,0.08);
     --border-md:   rgba(255,255,255,0.12);
     --serif:       'Cormorant Garamond', Georgia, serif;
@@ -57,12 +91,21 @@
     font-family: var(--sans);
     background: var(--bg);
     color: var(--text);
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 17px;
+    line-height: 1.65;
     overflow-x: hidden;
   }
   a { color: var(--gold); text-decoration: none; }
   a:hover { color: #fff; }
+  a:focus-visible, button:focus-visible, input:focus-visible,
+  select:focus-visible, textarea:focus-visible, summary:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .fade-up { opacity: 1; transform: none; transition: none; }
+  }
 
   /* ── ANIMATIONS ── */
   .fade-up {
@@ -111,9 +154,7 @@
     align-items: center;
     gap: 10px;
   }
-  .nav-logo img { height: 34px; width: auto; border-radius: 5px; object-fit: contain; }
-  .nav-logo .logo-crop { display: inline-block; width: 77px; height: 34px; overflow: hidden; border-radius: 5px; position: relative; }
-  .nav-logo .logo-crop img { position: absolute; top: -39px; left: -145px; width: 243px; height: 162px; max-width: none; border-radius: 0; }
+  .nav-logo img { height: 44px; width: auto; object-fit: contain; }
   .nav-logo .w1 { color: var(--gold); }
   .nav-logo .w2 { color: #FFFFFF; }
   .nav-logo .w3 { color: var(--text-lt); font-size: 0.65em; letter-spacing: 0.15em; font-weight: 400; }
@@ -124,10 +165,10 @@
     align-items: center;
   }
   .nav-links a {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.1em;
-    color: var(--text-lt);
+    color: var(--text-mid);
     text-decoration: none;
     text-transform: uppercase;
     transition: color var(--transition);
@@ -264,12 +305,12 @@
     color: #FFFFFF;
   }
   .hero-sub {
-    font-size: 17px;
+    font-size: 18px;
     color: var(--text-mid);
     line-height: 1.75;
     margin-bottom: 2.75rem;
     max-width: 460px;
-    font-weight: 300;
+    font-weight: 400;
   }
   .hero-buttons {
     display: flex;
@@ -329,7 +370,7 @@
     line-height: 1;
   }
   .trust-label {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-lt);
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -454,7 +495,7 @@
     color: var(--text-mid);
     line-height: 1.75;
     max-width: 560px;
-    font-weight: 300;
+    font-weight: 400;
   }
 
   /* ── SERVICES GRID ── */
@@ -506,11 +547,11 @@
     margin-bottom: 0.6rem;
   }
   .svc-card-desc {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text-mid);
     line-height: 1.7;
     margin-bottom: 1.5rem;
-    font-weight: 300;
+    font-weight: 400;
   }
   .svc-link {
     font-size: 12px;
@@ -553,7 +594,7 @@
     opacity: 0.4;
   }
   .why-point-title { font-size: 16px; font-weight: 600; color: #FFFFFF; margin-bottom: 6px; }
-  .why-point-text { font-size: 14px; color: var(--text-mid); line-height: 1.7; font-weight: 300; }
+  .why-point-text { font-size: 15px; color: var(--text-mid); line-height: 1.7; font-weight: 400; }
   .why-right { position: relative; }
   .why-card {
     background: var(--bg-card);
@@ -648,7 +689,7 @@
     box-shadow: 0 0 30px rgba(201,162,39,0.35);
   }
   .step-title { font-size: 15px; font-weight: 600; color: #FFFFFF; margin-bottom: 0.6rem; }
-  .step-desc { font-size: 13px; color: var(--text-mid); line-height: 1.65; font-weight: 300; }
+  .step-desc { font-size: 14px; color: var(--text-mid); line-height: 1.65; font-weight: 400; }
 
   /* ── TESTIMONIALS ── */
   .testimonials-grid {
@@ -692,7 +733,7 @@
     list-style: none;
     padding: 1.25rem 1.5rem;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 16px;
     color: #FFFFFF;
     cursor: pointer;
     display: flex;
@@ -712,10 +753,10 @@
   .faq-item[open] .faq-q::after { transform: rotate(45deg); }
   .faq-a {
     padding: 0 1.5rem 1.25rem;
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text-mid);
     line-height: 1.7;
-    font-weight: 300;
+    font-weight: 400;
   }
 
   /* ── AREAS ── */
@@ -761,7 +802,7 @@
     border: 1px solid var(--border-md);
     border-radius: var(--radius);
     font-family: var(--sans);
-    font-size: 14px;
+    font-size: 16px; /* 16px+ prevents iOS auto-zoom on focus */
     color: #FFFFFF;
     outline: none;
     transition: border-color var(--transition);
@@ -854,7 +895,7 @@
     letter-spacing: 0.02em;
     text-decoration: none;
   }
-  .footer-tagline { font-size: 14px; color: var(--text-lt); line-height: 1.7; margin-bottom: 1.75rem; font-weight: 300; }
+  .footer-tagline { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: 1.75rem; font-weight: 400; }
   .footer-contact-line { font-size: 14px; margin-bottom: 8px; color: var(--text-lt); }
   .footer-contact-line a { color: var(--gold); text-decoration: none; transition: color var(--transition); }
   .footer-contact-line a:hover { color: #fff; }
@@ -869,10 +910,10 @@
   .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
   .footer-links a {
     font-size: 14px;
-    color: var(--text-lt);
+    color: var(--text-mid);
     text-decoration: none;
     transition: color var(--transition);
-    font-weight: 300;
+    font-weight: 400;
   }
   .footer-links a:hover { color: var(--gold); }
   .footer-bottom {
@@ -897,6 +938,93 @@
     font-weight: 600;
     letter-spacing: 0.08em;
   }
+
+  /* ── WORK GALLERY ── */
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 4rem;
+  }
+  .work-card {
+    position: relative;
+    margin: 0;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--bg-card);
+    transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+  }
+  .work-card img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: transform var(--transition);
+  }
+  .work-card figcaption {
+    padding: 12px 16px;
+    font-size: 14px;
+    color: var(--text-mid);
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+  }
+  .work-card:hover { transform: translateY(-4px); border-color: var(--gold-border); box-shadow: 0 16px 40px rgba(0,0,0,0.45); }
+  .work-card:hover img { transform: scale(1.04); }
+
+  /* ── LIGHTBOX ── */
+  .lightbox { position: fixed; inset: 0; z-index: 10000; display: none; align-items: center; justify-content: center; }
+  .lightbox.is-open { display: flex; }
+  .lightbox__backdrop { position: absolute; inset: 0; background: rgba(10,10,10,0.94); backdrop-filter: blur(8px); }
+  .lightbox__container { position: relative; z-index: 2; max-width: 90vw; max-height: 90vh; display: flex; flex-direction: column; align-items: center; }
+  .lightbox__image { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 10px; box-shadow: 0 30px 60px rgba(0,0,0,0.6); }
+  .lightbox__caption { margin-top: 14px; color: var(--text-mid); font-size: 15px; text-align: center; }
+  .lightbox__close { position: absolute; top: -44px; right: 0; background: none; border: none; color: #fff; font-size: 28px; cursor: pointer; opacity: 0.7; }
+  .lightbox__close:hover { opacity: 1; }
+
+  /* ── MOBILE CALL BAR ── */
+  .mobile-call-bar {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 4000;
+    background: #0A0A0A;
+    border-top: 1px solid var(--gold-border);
+    padding: 12px 1rem;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .mobile-call-bar__btn {
+    flex: 1;
+    background: var(--gold);
+    color: #111;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    padding: 14px 8px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+  }
+  .mobile-call-bar__quote {
+    flex: 1;
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid var(--gold);
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    padding: 14px 8px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+  }
+  .mobile-call-bar__close { background: none; border: none; color: var(--text-lt); font-size: 20px; cursor: pointer; flex-shrink: 0; padding: 4px; }
 
   /* ── SCROLL TOP ── */
   .scroll-top {
@@ -943,10 +1071,14 @@
     .trust-bar-item:last-child { border-bottom: none; }
     .section { padding: 75px 1.5rem; }
     .areas-contact-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+    .work-grid { grid-template-columns: repeat(2, 1fr); }
+    .mobile-call-bar { display: flex; }
+    .scroll-top { bottom: 90px; }
   }
   @media (max-width: 480px) {
     .hero-trust { gap: 1.5rem; }
     .why-stat-row { gap: 1.25rem; }
+    .work-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -956,7 +1088,7 @@
 <nav id="navbar">
   <div class="nav-inner">
     <a href="#home" class="nav-logo">
-      <span class="logo-crop"><img src="assets/944E936E-1C9E-4781-AC70-04BEC5122BAE.png" alt="Elevated Electrical logo" /></span>
+      <img src="assets/logo-mark.png" alt="Elevated Electrical logo" />
       <span style="display:flex;flex-direction:column;line-height:1.1;gap:1px;">
         <span><span class="w1">ELEVATED</span> <span class="w2">ELECTRICAL</span></span>
         <span class="w3">BY WARDS ELECTRIC</span>
@@ -964,8 +1096,8 @@
     </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
+      <li><a href="#work">Our Work</a></li>
       <li><a href="#why-us">About</a></li>
-      <li><a href="#process">Process</a></li>
       <li><a href="#testimonials">Reviews</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="tel:+19154870660" class="nav-cta">Call 915-487-0660</a></li>
@@ -979,6 +1111,7 @@
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#work" onclick="closeMenu()">Our Work</a>
   <a href="#why-us" onclick="closeMenu()">About</a>
   <a href="#process" onclick="closeMenu()">Process</a>
   <a href="#testimonials" onclick="closeMenu()">Reviews</a>
@@ -1235,6 +1368,51 @@
   </div>
 </section>
 
+<!-- OUR WORK -->
+<section class="section" id="work">
+  <div class="container">
+    <div class="section-eyebrow fade-up">Our Work</div>
+    <h2 class="section-title fade-up delay-1">Real jobs. Real photos.<br><em>Judge the work yourself.</em></h2>
+    <p class="section-sub fade-up delay-2">Every photo below is our own work — no stock images. Tap any photo to see it full size.</p>
+    <div class="work-grid">
+      <figure class="work-card fade-up delay-1" tabindex="0" role="button" aria-label="View project photo">
+        <img src="assets/photos/photo-4.jpg" alt="Electrical panel upgrade by Elevated Electrical" loading="lazy" decoding="async" />
+        <figcaption>Panel upgrade — labeled, balanced, and built for the next upgrades.</figcaption>
+      </figure>
+      <figure class="work-card fade-up delay-2" tabindex="0" role="button" aria-label="View project photo">
+        <img src="assets/photos/photo-6.jpg" alt="EV charger installation by Elevated Electrical" loading="lazy" decoding="async" />
+        <figcaption>EV charger install — correct wire/breaker, clean route, future-ready.</figcaption>
+      </figure>
+      <figure class="work-card fade-up delay-3" tabindex="0" role="button" aria-label="View project photo">
+        <img src="assets/photos/photo-3.jpg" alt="Whole shop electrical build by Elevated Electrical" loading="lazy" decoding="async" />
+        <figcaption>Whole shop build — roughed, trimmed, and finished like we planned it from day one.</figcaption>
+      </figure>
+      <figure class="work-card fade-up delay-1" tabindex="0" role="button" aria-label="View project photo">
+        <img src="assets/photos/photo-2.jpg" alt="Kitchen lighting retrofit by Elevated Electrical" loading="lazy" decoding="async" />
+        <figcaption>Kitchen lighting retrofit — brighter counters, better vibe, zero glare.</figcaption>
+      </figure>
+      <figure class="work-card fade-up delay-2" tabindex="0" role="button" aria-label="View project photo">
+        <img src="assets/photos/photo-1.jpg" alt="Accent lighting installation by Elevated Electrical" loading="lazy" decoding="async" />
+        <figcaption>Accent lighting that actually looks intentional — clean lines, no janky trim.</figcaption>
+      </figure>
+      <figure class="work-card fade-up delay-3" tabindex="0" role="button" aria-label="View project photo">
+        <img src="assets/photos/photo-5.jpg" alt="Garage heater electrical installation by Elevated Electrical" loading="lazy" decoding="async" />
+        <figcaption>Garage heater on a dedicated circuit — safe clearances, right sizing, clean install.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="photoLightbox" aria-hidden="true" role="dialog">
+  <div class="lightbox__backdrop"></div>
+  <div class="lightbox__container">
+    <button class="lightbox__close" aria-label="Close lightbox">&#10005;</button>
+    <img class="lightbox__image" src="" alt="" />
+    <div class="lightbox__caption"></div>
+  </div>
+</div>
+
 <!-- TESTIMONIALS -->
 <section class="section" id="testimonials">
   <div class="container">
@@ -1426,6 +1604,13 @@
   </div>
 </footer>
 
+<!-- MOBILE CALL BAR -->
+<div class="mobile-call-bar" id="mobileCallBar">
+  <a class="mobile-call-bar__btn" href="tel:+19154870660">📞 Call Now</a>
+  <a class="mobile-call-bar__quote" href="#contact" onclick="dismissCallBarTemp()">Get Free Quote</a>
+  <button class="mobile-call-bar__close" onclick="dismissCallBar()" aria-label="Dismiss">&#10005;</button>
+</div>
+
 <!-- SCROLL TOP -->
 <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">↑</button>
 
@@ -1463,6 +1648,36 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
   }, { threshold: 0.1 });
   document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
+
+  // Mobile call bar
+  (function(){ if (sessionStorage.getItem("callBarDismissed")) { const b = document.getElementById("mobileCallBar"); if (b) b.style.display = "none"; } })();
+  function dismissCallBar() {
+    sessionStorage.setItem("callBarDismissed", "1");
+    const b = document.getElementById("mobileCallBar");
+    if (b) b.style.display = "none";
+  }
+  function dismissCallBarTemp() { /* let the anchor scroll; keep the bar for later */ }
+
+  // Photo lightbox
+  const lightbox = document.getElementById("photoLightbox");
+  const lbImg = lightbox.querySelector(".lightbox__image");
+  const lbCaption = lightbox.querySelector(".lightbox__caption");
+  document.querySelectorAll(".work-card").forEach(card => {
+    card.addEventListener("click", () => {
+      const img = card.querySelector("img");
+      const cap = card.querySelector("figcaption");
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lbCaption.textContent = cap ? cap.textContent : "";
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+    });
+    card.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); card.click(); } });
+  });
+  function closeLightbox() { lightbox.classList.remove("is-open"); lightbox.setAttribute("aria-hidden", "true"); }
+  lightbox.querySelector(".lightbox__close").addEventListener("click", closeLightbox);
+  lightbox.querySelector(".lightbox__backdrop").addEventListener("click", closeLightbox);
+  window.addEventListener("keydown", e => { if (e.key === "Escape" && lightbox.classList.contains("is-open")) closeLightbox(); });
 
   // Contact form
   const contactForm = document.getElementById("contactForm");
