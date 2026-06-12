@@ -948,6 +948,242 @@
     .hero-trust { gap: 1.5rem; }
     .why-stat-row { gap: 1.25rem; }
   }
+
+  /* ── PANEL LOAD CALCULATOR ── */
+  .calc-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin-top: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .calc-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-deep) 100%);
+  }
+  .calc-step { display: none; }
+  .calc-step.active { display: block; animation: fadeIn 0.35s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .calc-label {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 1.25rem;
+  }
+  .calc-hint { font-family: var(--sans); font-size: 13px; color: var(--text-lt); font-weight: 400; }
+  .calc-progress {
+    display: flex; gap: 6px; margin-bottom: 1.75rem;
+  }
+  .calc-progress-dot {
+    height: 4px; flex: 1; border-radius: 4px;
+    background: var(--border-md);
+    transition: background var(--transition);
+  }
+  .calc-progress-dot.done { background: var(--gold); }
+  .calc-options { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  .calc-opt {
+    padding: 12px 20px;
+    background: var(--bg);
+    border: 1px solid var(--border-md);
+    border-radius: var(--radius);
+    color: var(--text-mid);
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .calc-opt:hover { border-color: var(--gold); color: #fff; }
+  .calc-opt.active { background: var(--gold-pale); border-color: var(--gold); color: var(--gold); }
+  .calc-step-actions { margin-top: 1.75rem; display: flex; gap: 1rem; align-items: center; }
+  .calc-back {
+    background: none; border: none; color: var(--text-lt);
+    font-family: var(--sans); font-size: 13px; font-weight: 600;
+    cursor: pointer; text-decoration: underline;
+  }
+  .calc-back:hover { color: var(--gold); }
+  .calc-result-icon { font-size: 40px; margin-bottom: 1rem; }
+  .calc-result-text {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.35;
+    margin-bottom: 1rem;
+  }
+  .calc-result-text strong { color: var(--gold); }
+  .calc-disclaimer {
+    font-size: 13px;
+    color: var(--text-lt);
+    margin-bottom: 1.5rem;
+    max-width: 520px;
+  }
+  .calc-restart {
+    display: block;
+    margin: 0.9rem auto 0;
+    background: none; border: none;
+    color: var(--text-lt);
+    font-family: var(--sans); font-size: 13px; font-weight: 600;
+    cursor: pointer; text-decoration: underline;
+  }
+  .calc-restart:hover { color: var(--gold); }
+  .calc-result .btn-gold { width: auto; padding: 14px 32px; }
+
+  /* ── SMART FORM: FIELD VALIDATION + ZIP CHECK ── */
+  .form-input.invalid { border-color: #C0392B; }
+  .field-error {
+    display: none;
+    font-size: 12px;
+    color: #e57373;
+    margin-top: -4px;
+  }
+  .field-error.show { display: block; }
+  .zip-check {
+    font-size: 12px;
+    margin-top: -4px;
+    display: none;
+    font-weight: 600;
+  }
+  .zip-check.show { display: block; }
+  .zip-check.ok { color: #6FCF97; }
+  .zip-check.maybe { color: var(--gold); }
+  .photo-upload-label {
+    font-size: 12px;
+    color: var(--text-lt);
+    margin-top: -6px;
+  }
+  .photo-preview {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: -4px;
+  }
+  .photo-preview img {
+    width: 52px; height: 52px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--border-md);
+  }
+
+  /* ── SMART INTAKE ASSISTANT (CHAT WIDGET) ── */
+  .chat-widget { position: fixed; left: 2rem; bottom: 2rem; z-index: 4000; font-family: var(--sans); }
+  .chat-toggle {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: none;
+    color: #111;
+    font-size: 26px;
+    cursor: pointer;
+    box-shadow: 0 6px 24px rgba(201,162,39,0.35);
+    transition: var(--transition);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .chat-toggle:hover { background: #fff; transform: translateY(-2px); }
+  .chat-toggle .chat-dot {
+    position: absolute;
+    top: -3px; right: -3px;
+    width: 14px; height: 14px;
+    background: #6FCF97;
+    border: 2px solid var(--bg);
+    border-radius: 50%;
+  }
+  .chat-panel {
+    position: absolute;
+    bottom: 74px; left: 0;
+    width: 340px;
+    max-height: 480px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-md);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.55);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .chat-panel.open { display: flex; }
+  .chat-header {
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-deep) 100%);
+    color: #111;
+    padding: 14px 18px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .chat-header-title { font-family: var(--serif); font-weight: 700; font-size: 16px; }
+  .chat-header-sub { font-size: 11px; opacity: 0.75; }
+  .chat-close { background: none; border: none; color: #111; font-size: 18px; cursor: pointer; opacity: 0.7; }
+  .chat-close:hover { opacity: 1; }
+  .chat-body {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .chat-msg {
+    max-width: 88%;
+    padding: 10px 13px;
+    border-radius: 12px;
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+  .chat-msg--bot { background: var(--bg-raised); color: #fff; align-self: flex-start; border: 1px solid var(--border); }
+  .chat-msg--user { background: var(--gold-pale); color: var(--gold); align-self: flex-end; border: 1px solid var(--gold-border); }
+  .chat-msg--emergency { background: rgba(192,57,43,0.15); border: 1px solid rgba(192,57,43,0.4); color: #ff8a80; align-self: flex-start; }
+  .chat-quick-replies { display: flex; flex-direction: column; gap: 6px; align-self: stretch; }
+  .chat-quick-btn {
+    background: var(--bg);
+    border: 1px solid var(--border-md);
+    color: #fff;
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+    font-family: var(--sans);
+    transition: var(--transition);
+  }
+  .chat-quick-btn:hover { border-color: var(--gold); color: var(--gold); }
+  .chat-quick-btn--call { background: #C0392B; border-color: #C0392B; color: #fff; font-weight: 700; text-align: center; }
+  .chat-quick-btn--call:hover { background: #E74C3C; color: #fff; }
+  .chat-input-row {
+    display: flex; gap: 8px;
+    padding: 12px;
+    border-top: 1px solid var(--border);
+  }
+  .chat-input {
+    flex: 1;
+    background: var(--bg);
+    border: 1px solid var(--border-md);
+    border-radius: 8px;
+    padding: 10px 12px;
+    color: #fff;
+    font-family: var(--sans);
+    font-size: 13px;
+    outline: none;
+  }
+  .chat-input:focus { border-color: var(--gold); }
+  .chat-send {
+    background: var(--gold);
+    border: none;
+    border-radius: 8px;
+    width: 40px;
+    color: #111;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 700;
+  }
+  .chat-send:hover { background: #fff; }
+  @media (max-width: 920px) {
+    .chat-widget { bottom: 76px; left: 1rem; }
+    .chat-panel { width: calc(100vw - 2rem); max-width: 340px; }
+  }
 </style>
 </head>
 <body>
@@ -965,6 +1201,7 @@
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#why-us">About</a></li>
+      <li><a href="#calculator">Panel Tool</a></li>
       <li><a href="#process">Process</a></li>
       <li><a href="#testimonials">Reviews</a></li>
       <li><a href="#faq">FAQ</a></li>
@@ -980,6 +1217,7 @@
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <a href="#services" onclick="closeMenu()">Services</a>
   <a href="#why-us" onclick="closeMenu()">About</a>
+  <a href="#calculator" onclick="closeMenu()">Panel Tool</a>
   <a href="#process" onclick="closeMenu()">Process</a>
   <a href="#testimonials" onclick="closeMenu()">Reviews</a>
   <a href="#faq" onclick="closeMenu()">FAQ</a>
@@ -1202,6 +1440,70 @@
   </div>
 </section>
 
+<!-- LOAD CALCULATOR -->
+<section class="section section-alt" id="calculator">
+  <div class="container">
+    <div class="section-eyebrow fade-up">Free Smart Tool</div>
+    <h2 class="section-title fade-up delay-1">Will your panel handle it?<br><em>Get an instant estimate.</em></h2>
+    <p class="section-sub fade-up delay-2">Adding an EV charger, hot tub, or new appliance? Answer 3 quick questions and we'll give you a straight read — then confirm the real numbers on-site, free.</p>
+
+    <div class="calc-card fade-up delay-2">
+      <div class="calc-progress">
+        <div class="calc-progress-dot" data-dot="1"></div>
+        <div class="calc-progress-dot" data-dot="2"></div>
+        <div class="calc-progress-dot" data-dot="3"></div>
+      </div>
+
+      <div class="calc-step active" data-step="1">
+        <div class="calc-label">1. What size is your electrical panel?</div>
+        <div class="calc-options" data-group="panel">
+          <button class="calc-opt" data-value="100">100A</button>
+          <button class="calc-opt" data-value="150">150A</button>
+          <button class="calc-opt" data-value="200">200A</button>
+          <button class="calc-opt" data-value="unsure">Not sure</button>
+        </div>
+      </div>
+
+      <div class="calc-step" data-step="2">
+        <div class="calc-label">2. What are you looking to add? <span class="calc-hint">(pick all that apply)</span></div>
+        <div class="calc-options" data-group="loads">
+          <button class="calc-opt" data-value="ev" data-amps="40">EV Charger</button>
+          <button class="calc-opt" data-value="hottub" data-amps="50">Hot Tub / Spa</button>
+          <button class="calc-opt" data-value="hvac" data-amps="40">AC / Heat Pump</button>
+          <button class="calc-opt" data-value="range" data-amps="40">Electric Range</button>
+          <button class="calc-opt" data-value="generator" data-amps="0">Generator / Backup</button>
+          <button class="calc-opt" data-value="subpanel" data-amps="60">Workshop / Sub-Panel</button>
+        </div>
+        <div class="calc-step-actions">
+          <button class="btn-gold" id="calcStep2Next" style="width:auto;padding:12px 28px;">Continue →</button>
+          <button class="calc-back" data-back="1">← Back</button>
+        </div>
+      </div>
+
+      <div class="calc-step" data-step="3">
+        <div class="calc-label">3. How full is your panel right now?</div>
+        <div class="calc-options" data-group="space">
+          <button class="calc-opt" data-value="open">Several open breaker slots</button>
+          <button class="calc-opt" data-value="few">One or two open slots</button>
+          <button class="calc-opt" data-value="full">Full / no open slots</button>
+          <button class="calc-opt" data-value="unsure">Not sure</button>
+        </div>
+        <div class="calc-step-actions">
+          <button class="calc-back" data-back="2">← Back</button>
+        </div>
+      </div>
+
+      <div class="calc-step" data-step="result" id="calcResult">
+        <div class="calc-result-icon" id="calcResultIcon"></div>
+        <div class="calc-result-text" id="calcResultText"></div>
+        <p class="calc-disclaimer">This is a quick estimate based on what you told us — not a substitute for a licensed load calculation. We'll confirm the real numbers on-site, free, before any work is scheduled.</p>
+        <button class="btn-gold" id="calcCta">Get My Free On-Site Check</button>
+        <button class="calc-restart" id="calcRestart">Start over</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PROCESS -->
 <section class="section section-alt" id="process">
   <div class="container">
@@ -1326,25 +1628,43 @@
           <div class="section-eyebrow" style="margin-bottom:1rem;">Free Estimate</div>
           <h3 style="font-family:var(--serif);font-size:28px;color:#FFFFFF;margin-bottom:0.5rem;font-weight:600;">Get a quote today.</h3>
           <p style="font-size:14px;color:var(--text-mid);margin-bottom:2rem;font-weight:300;">Fill out the form and we'll reach out shortly.</p>
-          <form id="contactForm" style="display:flex;flex-direction:column;gap:14px;">
+          <form id="contactForm" style="display:flex;flex-direction:column;gap:14px;" novalidate>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-              <input type="text" name="firstName" placeholder="First name" required class="form-input" />
+              <div style="display:flex;flex-direction:column;gap:4px;">
+                <input type="text" name="firstName" placeholder="First name" required class="form-input" />
+                <span class="field-error">Please enter your first name.</span>
+              </div>
               <input type="text" name="lastName" placeholder="Last name" class="form-input" />
             </div>
-            <input type="tel" name="phone" placeholder="Phone number" required class="form-input" />
+            <div style="display:flex;flex-direction:column;gap:4px;">
+              <input type="tel" name="phone" placeholder="Phone number" required class="form-input" maxlength="14" />
+              <span class="field-error">Please enter a valid phone number.</span>
+            </div>
             <input type="email" name="email" placeholder="Email address" class="form-input" />
-            <select name="serviceType" required class="form-input">
-              <option value="" disabled selected>Select service needed</option>
-              <option>Panel Upgrade</option>
-              <option>EV Charger Install</option>
-              <option>Troubleshooting</option>
-              <option>Dedicated Circuit</option>
-              <option>Lighting</option>
-              <option>Safety / Code Fix</option>
-              <option>Generator / Backup Power</option>
-              <option>Other / Not Sure</option>
-            </select>
+            <div style="display:flex;flex-direction:column;gap:4px;">
+              <input type="text" name="zip" placeholder="ZIP code (optional)" class="form-input" maxlength="5" inputmode="numeric" id="zipInput" />
+              <span class="zip-check" id="zipCheck"></span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:4px;">
+              <select name="serviceType" required class="form-input">
+                <option value="" disabled selected>Select service needed</option>
+                <option>Panel Upgrade</option>
+                <option>EV Charger Install</option>
+                <option>Troubleshooting</option>
+                <option>Dedicated Circuit</option>
+                <option>Lighting</option>
+                <option>Safety / Code Fix</option>
+                <option>Generator / Backup Power</option>
+                <option>Other / Not Sure</option>
+              </select>
+              <span class="field-error">Please select a service.</span>
+            </div>
             <textarea name="message" placeholder="Tell us a bit about the job..." rows="3" class="form-input"></textarea>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <input type="file" id="photoUpload" accept="image/*" multiple class="form-input" style="padding:10px 16px;cursor:pointer;" />
+              <span class="photo-upload-label">Add a photo of the issue (optional) — up to 3 images, helps us prep before we call.</span>
+              <div class="photo-preview" id="photoPreview"></div>
+            </div>
             <button type="submit" class="form-submit" id="formSubmitBtn">Send My Request →</button>
             <p id="formError" style="display:none;text-align:center;font-size:13px;color:#e57373;margin-top:4px;">⚠️ Didn't send. Try calling or texting us at 915-487-0660.</p>
           </form>
@@ -1429,6 +1749,27 @@
 <!-- SCROLL TOP -->
 <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">↑</button>
 
+<!-- SMART INTAKE ASSISTANT -->
+<div class="chat-widget" id="chatWidget">
+  <div class="chat-panel" id="chatPanel" aria-hidden="true">
+    <div class="chat-header">
+      <div>
+        <div class="chat-header-title">Wards Electric Assistant</div>
+        <div class="chat-header-sub">Usually replies in minutes</div>
+      </div>
+      <button class="chat-close" id="chatClose" aria-label="Close chat">✕</button>
+    </div>
+    <div class="chat-body" id="chatBody"></div>
+    <div class="chat-input-row">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Type a message…" autocomplete="off" />
+      <button class="chat-send" id="chatSend" aria-label="Send">➤</button>
+    </div>
+  </div>
+  <button class="chat-toggle" id="chatToggle" aria-label="Chat with us">
+    <span style="position:relative;">⚡<span class="chat-dot"></span></span>
+  </button>
+</div>
+
 <script>
   const WEBHOOK_URL = "https://wards-electrical.app.n8n.cloud/webhook/0c41a587-89af-4066-9aa8-365de46e1906";
 
@@ -1468,15 +1809,114 @@
   const contactForm = document.getElementById("contactForm");
   const formSubmitBtn = document.getElementById("formSubmitBtn");
   const formError = document.getElementById("formError");
+
+  // Phone number auto-formatting
+  const phoneInput = contactForm.querySelector('input[name="phone"]');
+  phoneInput.addEventListener("input", () => {
+    const digits = phoneInput.value.replace(/\D/g, "").slice(0, 10);
+    let formatted = digits;
+    if (digits.length > 6) formatted = `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+    else if (digits.length > 3) formatted = `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+    else if (digits.length > 0) formatted = `(${digits}`;
+    phoneInput.value = formatted;
+  });
+
+  // ZIP service-area check
+  const SERVICE_ZIPS = new Set([
+    // Colorado Springs
+    "80903","80904","80905","80906","80907","80908","80909","80910","80911",
+    "80913","80914","80915","80916","80917","80918","80919","80920","80921",
+    "80922","80923","80924","80925","80926","80927","80928","80929","80930",
+    "80938","80939",
+    // Falcon / Peyton
+    "80831",
+    // Monument
+    "80132",
+    // Woodland Park
+    "80863",
+    // Manitou Springs
+    "80829",
+    // Pueblo
+    "81001","81003","81004","81005","81006","81007","81008"
+  ]);
+  const zipInput = document.getElementById("zipInput");
+  const zipCheck = document.getElementById("zipCheck");
+  zipInput.addEventListener("input", () => {
+    zipInput.value = zipInput.value.replace(/\D/g, "").slice(0, 5);
+    const zip = zipInput.value;
+    if (zip.length === 5) {
+      if (SERVICE_ZIPS.has(zip)) {
+        zipCheck.textContent = "✓ Good news — that's in our service area!";
+        zipCheck.className = "zip-check show ok";
+      } else {
+        zipCheck.textContent = "We'll confirm we cover your area when we reach out.";
+        zipCheck.className = "zip-check show maybe";
+      }
+    } else {
+      zipCheck.className = "zip-check";
+    }
+  });
+
+  // Photo upload (optional, attached as base64)
+  const photoUpload = document.getElementById("photoUpload");
+  const photoPreview = document.getElementById("photoPreview");
+  let photoData = [];
+  photoUpload.addEventListener("change", async () => {
+    photoData = [];
+    photoPreview.innerHTML = "";
+    const files = Array.from(photoUpload.files).slice(0, 3);
+    for (const file of files) {
+      if (!file.type.startsWith("image/") || file.size > 1.5 * 1024 * 1024) continue;
+      const base64 = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+      photoData.push({ name: file.name, type: file.type, data: base64 });
+      const img = document.createElement("img");
+      img.src = base64;
+      img.alt = file.name;
+      photoPreview.appendChild(img);
+    }
+  });
+
+  // Live field validation
+  function fieldError(input) {
+    return input.parentElement.querySelector(".field-error");
+  }
+  function validateField(input, isValid) {
+    const errEl = fieldError(input);
+    input.classList.toggle("invalid", !isValid);
+    if (errEl) errEl.classList.toggle("show", !isValid);
+    return isValid;
+  }
+  const firstNameInput = contactForm.querySelector('input[name="firstName"]');
+  const serviceTypeSelect = contactForm.querySelector('select[name="serviceType"]');
+  firstNameInput.addEventListener("blur", () => validateField(firstNameInput, firstNameInput.value.trim().length > 0));
+  phoneInput.addEventListener("blur", () => validateField(phoneInput, phoneInput.value.replace(/\D/g, "").length === 10));
+  serviceTypeSelect.addEventListener("change", () => validateField(serviceTypeSelect, serviceTypeSelect.value.length > 0));
+
   contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     formError.style.display = "none";
+
+    const validFirst = validateField(firstNameInput, firstNameInput.value.trim().length > 0);
+    const validPhone = validateField(phoneInput, phoneInput.value.replace(/\D/g, "").length === 10);
+    const validService = validateField(serviceTypeSelect, serviceTypeSelect.value.length > 0);
+    if (!validFirst || !validPhone || !validService) {
+      const firstInvalid = contactForm.querySelector(".form-input.invalid");
+      if (firstInvalid) firstInvalid.focus();
+      return;
+    }
+
     formSubmitBtn.disabled = true;
     formSubmitBtn.textContent = "Sending…";
     const data = Object.fromEntries(new FormData(contactForm).entries());
     data.source = "website";
     data.page = "home";
     data.timestamp = new Date().toISOString();
+    if (photoData.length) data.photos = photoData;
     try {
       const res = await fetch(WEBHOOK_URL, {
         method: "POST",
@@ -1492,6 +1932,264 @@
       formSubmitBtn.textContent = "Send My Request →";
     }
   });
+
+  // Panel load calculator
+  (function () {
+    const calcCard = document.querySelector(".calc-card");
+    if (!calcCard) return;
+    const steps = calcCard.querySelectorAll(".calc-step");
+    const dots = calcCard.querySelectorAll(".calc-progress-dot");
+    const selections = { panel: null, loads: [], space: null };
+
+    function showStep(stepName) {
+      steps.forEach(s => s.classList.toggle("active", s.dataset.step === stepName));
+      const stepNum = stepName === "result" ? 3 : parseInt(stepName, 10);
+      dots.forEach((d, i) => d.classList.toggle("done", i < stepNum));
+    }
+
+    calcCard.querySelector('[data-group="panel"]').addEventListener("click", (e) => {
+      const btn = e.target.closest(".calc-opt");
+      if (!btn) return;
+      calcCard.querySelectorAll('[data-group="panel"] .calc-opt').forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      selections.panel = btn.dataset.value;
+      setTimeout(() => showStep("2"), 200);
+    });
+
+    calcCard.querySelector('[data-group="loads"]').addEventListener("click", (e) => {
+      const btn = e.target.closest(".calc-opt");
+      if (!btn) return;
+      btn.classList.toggle("active");
+      const val = btn.dataset.value;
+      if (selections.loads.includes(val)) {
+        selections.loads = selections.loads.filter(v => v !== val);
+      } else {
+        selections.loads.push(val);
+      }
+    });
+    document.getElementById("calcStep2Next").addEventListener("click", () => {
+      if (selections.loads.length === 0) return;
+      showStep("3");
+    });
+
+    calcCard.querySelector('[data-group="space"]').addEventListener("click", (e) => {
+      const btn = e.target.closest(".calc-opt");
+      if (!btn) return;
+      calcCard.querySelectorAll('[data-group="space"] .calc-opt').forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      selections.space = btn.dataset.value;
+      setTimeout(() => { computeResult(); showStep("result"); }, 200);
+    });
+
+    calcCard.querySelectorAll(".calc-back").forEach(btn => {
+      btn.addEventListener("click", () => showStep(btn.dataset.back));
+    });
+
+    document.getElementById("calcRestart").addEventListener("click", () => {
+      selections.panel = null; selections.loads = []; selections.space = null;
+      calcCard.querySelectorAll(".calc-opt").forEach(b => b.classList.remove("active"));
+      showStep("1");
+    });
+
+    const LOAD_LABELS = { ev: "EV Charger", hottub: "Hot Tub/Spa", hvac: "AC/Heat Pump", range: "Electric Range", generator: "Generator/Backup", subpanel: "Workshop/Sub-Panel" };
+
+    function computeResult() {
+      const resultIcon = document.getElementById("calcResultIcon");
+      const resultText = document.getElementById("calcResultText");
+
+      const totalAmps = selections.loads.reduce((sum, val) => {
+        const btn = calcCard.querySelector(`[data-group="loads"] [data-value="${val}"]`);
+        return sum + parseInt(btn.dataset.amps, 10);
+      }, 0);
+
+      const headroomTable = {
+        "100": { open: 20, few: 10, full: 0, unsure: 0 },
+        "150": { open: 30, few: 15, full: 0, unsure: 0 },
+        "200": { open: 50, few: 25, full: 0, unsure: 5 },
+        "unsure": { open: 15, few: 5, full: 0, unsure: 0 }
+      };
+      const headroom = (headroomTable[selections.panel] || headroomTable.unsure)[selections.space] ?? 0;
+      const onlyGenerator = selections.loads.length === 1 && selections.loads[0] === "generator";
+      const panelLabel = selections.panel === "unsure" ? "panel" : selections.panel + "A panel";
+
+      if (onlyGenerator) {
+        resultIcon.textContent = "🔋";
+        resultText.innerHTML = `A generator/backup setup mostly comes down to <strong>where the interlock or transfer switch goes</strong>, not raw panel capacity. We'll walk your panel and give you options on-site.`;
+      } else if (totalAmps <= headroom) {
+        resultIcon.textContent = "✅";
+        resultText.innerHTML = `Based on what you told us, your <strong>${panelLabel}</strong> likely has room for this. We'll confirm the exact numbers with a quick on-site check.`;
+      } else if (selections.panel === "200" || selections.panel === "150") {
+        resultIcon.textContent = "🤔";
+        resultText.innerHTML = `It's close. A <strong>${panelLabel}</strong> with what you're adding is often doable — sometimes with a small adjustment like a load-management device. Worth a quick on-site check.`;
+      } else {
+        resultIcon.textContent = "⚠️";
+        resultText.innerHTML = `A <strong>${panelLabel}</strong> with what you're adding commonly needs a panel upgrade to handle it safely and meet code. Good news — panel upgrades are one of our most common jobs.`;
+      }
+    }
+
+    document.getElementById("calcCta").addEventListener("click", () => {
+      const loadNames = selections.loads.map(l => LOAD_LABELS[l]).join(", ") || "—";
+      if (selections.loads.includes("ev") && !(selections.loads.length === 1 && selections.loads[0] === "generator")) {
+        serviceTypeSelect.value = "EV Charger Install";
+      } else if (selections.loads.length === 1 && selections.loads[0] === "generator") {
+        serviceTypeSelect.value = "Generator / Backup Power";
+      } else {
+        serviceTypeSelect.value = "Panel Upgrade";
+      }
+      const panelLabel = selections.panel === "unsure" ? "not sure / need to check" : selections.panel + "A";
+      const spaceLabel = { open: "several open slots", few: "one or two open slots", full: "full / no open slots", unsure: "not sure" }[selections.space] || selections.space;
+      contactForm.querySelector('textarea[name="message"]').value =
+        `From the panel tool: my panel is ${panelLabel}, I want to add: ${loadNames}. Panel space: ${spaceLabel}.`;
+      document.getElementById("contact").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  })();
+
+  // Smart intake assistant (chat widget)
+  (function () {
+    const chatToggle = document.getElementById("chatToggle");
+    const chatPanel = document.getElementById("chatPanel");
+    const chatClose = document.getElementById("chatClose");
+    const chatBody = document.getElementById("chatBody");
+    const chatInput = document.getElementById("chatInput");
+    const chatSend = document.getElementById("chatSend");
+
+    const EMERGENCY_WORDS = /spark|burn|smoke|fire|shock|melt|hot to the touch|no power|outage|smell/i;
+    const chatData = { category: null, name: "", details: "" };
+    let started = false;
+    let step = "start";
+
+    function scrollBody() { chatBody.scrollTop = chatBody.scrollHeight; }
+    function addBotMessage(html) {
+      const div = document.createElement("div");
+      div.className = "chat-msg chat-msg--bot";
+      div.innerHTML = html;
+      chatBody.appendChild(div);
+      scrollBody();
+    }
+    function addEmergencyMessage(html) {
+      const div = document.createElement("div");
+      div.className = "chat-msg chat-msg--emergency";
+      div.innerHTML = html;
+      chatBody.appendChild(div);
+      scrollBody();
+    }
+    function addUserMessage(text) {
+      const div = document.createElement("div");
+      div.className = "chat-msg chat-msg--user";
+      div.textContent = text;
+      chatBody.appendChild(div);
+      scrollBody();
+    }
+    function addQuickReplies(options) {
+      const wrap = document.createElement("div");
+      wrap.className = "chat-quick-replies";
+      options.forEach(opt => {
+        const btn = document.createElement("button");
+        btn.className = "chat-quick-btn" + (opt.danger ? " chat-quick-btn--call" : "");
+        btn.textContent = opt.label;
+        btn.addEventListener("click", () => {
+          wrap.remove();
+          addUserMessage(opt.label);
+          opt.action();
+        });
+        wrap.appendChild(btn);
+      });
+      chatBody.appendChild(wrap);
+      scrollBody();
+    }
+
+    function showEmergency() {
+      step = "emergency";
+      addEmergencyMessage("🚨 If you smell burning, see sparking, or anything feels hot — turn off the breaker for that circuit now if it's safe to do so.");
+      addQuickReplies([
+        { label: "📞 Call 915-487-0660 now", danger: true, action: () => { window.location.href = "tel:+19154870660"; } },
+        { label: "Text me / leave details instead", action: () => askName("emergency") }
+      ]);
+    }
+    function askName(category) {
+      chatData.category = category;
+      step = "name";
+      addBotMessage("Got it. What's your name and the best phone number to reach you? (e.g. \"Jordan, 719-555-1234\")");
+    }
+    function askDetails() {
+      step = "details";
+      addBotMessage("Thanks! Anything else we should know before we call?");
+    }
+    function finishChat() {
+      step = "done";
+      addBotMessage("Thanks — we've got your info and will reach out shortly. You can also call/text 915-487-0660 anytime.");
+      submitChatLead();
+    }
+    async function submitChatLead() {
+      const data = {
+        source: "chat-assistant",
+        page: "home",
+        category: chatData.category || "general",
+        message: [chatData.name, chatData.details].filter(Boolean).join(" — "),
+        timestamp: new Date().toISOString()
+      };
+      try {
+        await fetch(WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+      } catch (err) { /* silent — phone/call CTAs remain visible */ }
+    }
+    function startChat() {
+      if (started) return;
+      started = true;
+      addBotMessage("Hi! I'm the Wards Electric assistant. What's going on?");
+      addQuickReplies([
+        { label: "🚨 It's an emergency (sparking, burning, no power)", action: showEmergency },
+        { label: "🔧 Something's not working", action: () => askName("repair") },
+        { label: "💡 New install or upgrade", action: () => askName("new install") },
+        { label: "❓ Just have a question", action: () => askName("question") }
+      ]);
+    }
+    function openChat() {
+      chatPanel.classList.add("open");
+      chatPanel.setAttribute("aria-hidden", "false");
+      startChat();
+      chatInput.focus();
+    }
+    function closeChat() {
+      chatPanel.classList.remove("open");
+      chatPanel.setAttribute("aria-hidden", "true");
+    }
+
+    chatToggle.addEventListener("click", () => {
+      if (chatPanel.classList.contains("open")) closeChat(); else openChat();
+    });
+    chatClose.addEventListener("click", closeChat);
+
+    function handleUserInput() {
+      const text = chatInput.value.trim();
+      if (!text) return;
+      addUserMessage(text);
+      chatInput.value = "";
+
+      if (EMERGENCY_WORDS.test(text) && step !== "emergency" && step !== "done") {
+        if (step === "name") chatData.name = text;
+        else if (step === "details") chatData.details = text;
+        showEmergency();
+        return;
+      }
+
+      if (step === "name") {
+        chatData.name = text;
+        askDetails();
+      } else if (step === "details" || step === "emergency") {
+        chatData.details = text;
+        finishChat();
+      } else {
+        chatData.details = text;
+        askName("general");
+      }
+    }
+    chatSend.addEventListener("click", handleUserInput);
+    chatInput.addEventListener("keydown", (e) => { if (e.key === "Enter") handleUserInput(); });
+  })();
 </script>
 </body>
 </html>
