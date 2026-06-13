@@ -197,9 +197,11 @@
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(201,162,39,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(201,162,39,0.03) 1px, transparent 1px);
+      linear-gradient(rgba(201,162,39,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,162,39,0.05) 1px, transparent 1px);
     background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, black 0%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, black 0%, transparent 75%);
     pointer-events: none;
   }
   .hero-glow {
@@ -208,13 +210,49 @@
     width: 60vw; height: 60vw;
     background: radial-gradient(circle, rgba(201,162,39,0.07) 0%, transparent 65%);
     pointer-events: none;
+    animation: pulseGlow 9s ease-in-out infinite;
+  }
+  @keyframes pulseGlow {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.12); }
   }
   .hero-glow-2 {
     position: absolute;
     bottom: -20%; left: -10%;
     width: 40vw; height: 40vw;
-    background: radial-gradient(circle, rgba(201,162,39,0.04) 0%, transparent 65%);
+    background: radial-gradient(circle, rgba(47,184,255,0.05) 0%, transparent 65%);
     pointer-events: none;
+    animation: pulseGlow 11s ease-in-out infinite reverse;
+  }
+
+  /* ── LIVE STATUS BADGE ── */
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 7px 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-md);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-mid);
+    letter-spacing: 0.02em;
+  }
+  .status-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--text-lt);
+    flex-shrink: 0;
+  }
+  .status-dot.online {
+    background: #6FCF97;
+    animation: statusPulse 2s infinite;
+  }
+  @keyframes statusPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(111,207,151,0.55); }
+    70%  { box-shadow: 0 0 0 6px rgba(111,207,151,0); }
+    100% { box-shadow: 0 0 0 0 rgba(111,207,151,0); }
   }
   .hero-inner {
     max-width: 1160px;
@@ -291,7 +329,25 @@
     cursor: pointer;
     transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
     display: inline-block;
+    position: relative;
+    overflow: hidden;
+    animation: ctaPulse 1.5s ease-in-out infinite;
   }
+  @keyframes ctaPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(201,162,39,0); }
+    50% { box-shadow: 0 0 16px 3px rgba(201,162,39,0.45); }
+  }
+  .btn-gold::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -75%;
+    width: 50%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.55), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.6s ease;
+  }
+  .btn-gold:hover { animation-play-state: paused; }
+  .btn-gold:hover::after { left: 125%; }
   .btn-gold:hover {
     background: #fff;
     color: #111;
@@ -485,8 +541,10 @@
     transform-origin: left;
     transition: transform var(--transition);
   }
-  .svc-card:hover { background: #1F1F1F; }
+  .svc-card:hover { background: #1F1F1F; box-shadow: inset 0 0 40px rgba(201,162,39,0.08); }
   .svc-card:hover::after { transform: scaleX(1); }
+  .svc-card-icon { transition: var(--transition); }
+  .svc-card:hover .svc-card-icon { box-shadow: 0 0 18px rgba(201,162,39,0.35); transform: translateY(-2px); }
   .svc-card-icon {
     width: 52px; height: 52px;
     background: var(--gold-pale);
@@ -752,7 +810,13 @@
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-deep) 100%);
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-deep) 50%, var(--gold) 100%);
+    background-size: 200% 100%;
+    animation: shimmerBorder 1.5s linear infinite;
+  }
+  @keyframes shimmerBorder {
+    0% { background-position: 0% 0; }
+    100% { background-position: -200% 0; }
   }
   .form-input {
     width: 100%;
@@ -1231,6 +1295,10 @@
   <div class="hero-glow-2"></div>
   <div class="hero-inner">
     <div class="hero-content">
+      <div class="status-badge fade-up" id="statusBadge" style="margin-bottom:1rem;">
+        <span class="status-dot" id="statusDot"></span>
+        <span id="statusText">Checking availability…</span>
+      </div>
       <div class="hero-eyebrow fade-up">Colorado Springs Electrician</div>
       <h1 class="hero-headline fade-up delay-1">
         <em>Crafted work.</em>
@@ -1775,6 +1843,22 @@
 
   // Year
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Live status badge (Mon–Sat, 7am–6pm = open)
+  (function () {
+    const dot = document.getElementById("statusDot");
+    const text = document.getElementById("statusText");
+    const now = new Date();
+    const day = now.getDay();
+    const hour = now.getHours();
+    const isOpen = day >= 1 && day <= 6 && hour >= 7 && hour < 18;
+    if (isOpen) {
+      dot.classList.add("online");
+      text.textContent = "Online now — same-day slots may be open";
+    } else {
+      text.textContent = "After hours — next-day booking available";
+    }
+  })();
 
   // Nav scroll
   const navbar = document.getElementById("navbar");
