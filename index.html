@@ -585,6 +585,133 @@
   .svc-link:hover { gap: 12px; color: var(--gold); }
   .svc-link::after { content: '→'; }
 
+  /* ── SMART HOME ── */
+  .smart-section {
+    position: relative;
+    overflow: hidden;
+  }
+  .smart-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(201,162,39,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,162,39,0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 60% 60% at 80% 50%, black 0%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 60% 60% at 80% 50%, black 0%, transparent 75%);
+    pointer-events: none;
+  }
+  .smart-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .smart-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-top: 1.75rem;
+  }
+  .smart-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-mid);
+    font-size: 15px;
+  }
+  .smart-list-dot {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 10px rgba(201,162,39,0.65);
+    flex-shrink: 0;
+  }
+  .smart-visual {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    max-width: 380px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+  }
+  .smart-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,162,39,0.18) 0%, transparent 70%);
+    animation: smartPulse 6s ease-in-out infinite;
+  }
+  .smart-hub {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 84px; height: 84px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 0 40px rgba(201,162,39,0.5);
+  }
+  .smart-node {
+    position: absolute;
+    width: 54px; height: 54px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+  .smart-node-dot {
+    position: absolute;
+    top: -2px; right: -2px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #6FCF97;
+    border: 2px solid var(--bg);
+    animation: smartDotPulse 2s infinite;
+  }
+  .smart-node--top { top: 6%; left: 50%; animation: smartFloatTop 6s ease-in-out infinite; }
+  .smart-node--right { top: 50%; right: 2%; animation: smartFloatRight 6s ease-in-out infinite 1.5s; }
+  .smart-node--bottom { bottom: 6%; left: 50%; animation: smartFloatBottom 6s ease-in-out infinite 3s; }
+  .smart-node--left { top: 50%; left: 2%; animation: smartFloatLeft 6s ease-in-out infinite 4.5s; }
+  @keyframes smartPulse {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.08); }
+  }
+  @keyframes smartDotPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(111,207,151,0.6); }
+    70%  { box-shadow: 0 0 0 6px rgba(111,207,151,0); }
+    100% { box-shadow: 0 0 0 0 rgba(111,207,151,0); }
+  }
+  @keyframes smartFloatTop {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-8px); }
+  }
+  @keyframes smartFloatRight {
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-50%) translateX(8px); }
+  }
+  @keyframes smartFloatBottom {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+  @keyframes smartFloatLeft {
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-50%) translateX(-8px); }
+  }
+
   /* ── WHY US ── */
   .why-grid {
     display: grid;
@@ -1007,6 +1134,8 @@
     .trust-bar-item:last-child { border-bottom: none; }
     .section { padding: 75px 1.5rem; }
     .areas-contact-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+    .smart-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .smart-visual { max-width: 280px; margin-top: 1rem; }
   }
   @media (max-width: 480px) {
     .hero-trust { gap: 1.5rem; }
@@ -1439,6 +1568,42 @@
         <p class="svc-card-desc">Standby generator installation, transfer switches, interlock kits — reliable power when the grid goes down. Colorado-winter ready.</p>
         <a href="generator-backup.html" class="svc-link">Learn more</a>
       </div>
+      <div class="svc-card">
+        <div class="svc-card-icon">🏠</div>
+        <div class="svc-card-name">Home Automation</div>
+        <p class="svc-card-desc">Smart switches, custom lighting scenes, and centralized control panels — one switch or one app controls every light in the house.</p>
+        <a href="home-automation.html" class="svc-link">Learn more</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SMART HOME -->
+<section class="section smart-section" id="smart-home">
+  <div class="container smart-grid">
+    <div>
+      <div class="section-eyebrow fade-up">Smart Home Ready</div>
+      <h2 class="section-title fade-up delay-1">One switch.<br><em>Every light. No more guessing.</em></h2>
+      <p class="section-sub fade-up delay-2">
+        Smart switches, custom lighting scenes, and a centralized control panel that puts every light in your
+        home — garage included — at your fingertips from one place. No more "did I turn off the garage lights" trips.
+      </p>
+      <ul class="smart-list fade-up delay-3">
+        <li><span class="smart-list-dot"></span> Smart switches &amp; dimmers wired for app and voice control</li>
+        <li><span class="smart-list-dot"></span> Custom lighting scenes — "Away," "Movie Night," "Good Morning"</li>
+        <li><span class="smart-list-dot"></span> One centralized panel controls every room, every zone</li>
+        <li><span class="smart-list-dot"></span> Add rooms and devices later — the system scales with you</li>
+      </ul>
+      <div class="fade-up delay-4" style="margin-top:1.75rem;">
+        <a href="home-automation.html" class="btn-gold">Explore Home Automation →</a>
+      </div>
+    </div>
+    <div class="smart-visual fade-up delay-2" aria-hidden="true">
+      <div class="smart-hub">🏠</div>
+      <div class="smart-node smart-node--top">💡<span class="smart-node-dot"></span></div>
+      <div class="smart-node smart-node--right">🔌<span class="smart-node-dot"></span></div>
+      <div class="smart-node smart-node--bottom">🌡️<span class="smart-node-dot"></span></div>
+      <div class="smart-node smart-node--left">🚪<span class="smart-node-dot"></span></div>
     </div>
   </div>
 </section>
@@ -1783,6 +1948,7 @@
         <li><a href="lighting.html">Lighting</a></li>
         <li><a href="safety-code-fixes.html">Safety &amp; Code Fixes</a></li>
         <li><a href="generator-backup.html">Generator &amp; Backup</a></li>
+        <li><a href="home-automation.html">Home Automation</a></li>
       </ul>
     </div>
     <div>
